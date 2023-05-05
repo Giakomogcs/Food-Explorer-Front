@@ -1,19 +1,20 @@
 import { Container} from "./styles"
 
 import { Button } from "../../components/Button"
-import { Header } from "../../components/Header"
+import { HeaderUser } from "../../components/HeaderUser"
 import { Session } from "../../components/Session"
+import { Footer } from "../../components/Footer"
 
 export function Menu(){
   return(
     <Container>
-      <Header/>
+      <HeaderUser/>
 
       <div>
         <Session title="Sair"/>
       </div>
 
-
+      <Footer/>
       
     </Container>
   )

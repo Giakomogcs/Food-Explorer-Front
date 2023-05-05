@@ -2,7 +2,7 @@ import { Container, Menu, Logo, Receipt, Content  } from "./styles";
 
 import {AiOutlineMenu} from'react-icons/ai'
 
-export function Header(){
+export function HeaderUser(){
   return(
     <Container>
       <Content>

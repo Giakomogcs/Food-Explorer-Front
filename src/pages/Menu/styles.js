@@ -6,11 +6,12 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 144px auto;
+  grid-template-rows: 144px auto 77px;
 
   grid-template-areas: 
   "header"
-  "content";
+  "content"
+  "footer";
 
   >div{
     margin: 36px 28px;
