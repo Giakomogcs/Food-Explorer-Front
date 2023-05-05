@@ -23,16 +23,16 @@ export const Container = styled.header`
 
     font-family: 'DM Sans';
     font-weight: 400;
+    
+    >img{
+      height: 19px;
+      width: auto;
+    }
+  
+    >p{
+      color: ${({theme}) => theme.COLORS.LIGHT_200};
+      font-size: 12px;
+    }
   }
 
-  >img{
-    height: 19px;
-    width: auto;
-  }
-
-  >p{
-    color: ${({theme}) => theme.COLORS.LIGHT_200};
-    font-size: 12px;
-    line-height: 16px;
-  }
 `;
