@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {Prato} from './pages/Prato'
+import {Menu} from './pages/Menu'
 
 import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider  theme={theme}>
       <GlobalStyles/>
-      <Prato />
+      <Menu />
     </ThemeProvider>
   </React.StrictMode>,
 )

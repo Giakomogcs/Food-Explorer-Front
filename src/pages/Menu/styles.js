@@ -11,4 +11,8 @@ export const Container = styled.div`
   grid-template-areas: 
   "header"
   "content";
+
+  >div{
+    margin: 36px 28px;
+  }
 `;
