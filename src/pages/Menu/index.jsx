@@ -3,7 +3,7 @@ import { Container} from "./styles"
 import {FiSearch} from 'react-icons/fi'
 
 import { Button } from "../../components/Button"
-import { HeaderUser } from "../../components/HeaderUser"
+import { HeaderMenu } from "../../components/HeaderMenu"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {Input} from "../../components/SearchBar"
@@ -11,7 +11,7 @@ import {Input} from "../../components/SearchBar"
 export function Menu(){
   return(
     <Container>
-      <HeaderUser/>
+      <HeaderMenu/>
 
 
       <div>
