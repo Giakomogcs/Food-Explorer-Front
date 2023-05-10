@@ -13,7 +13,4 @@ export const Container = styled.div`
   "content"
   "footer";
 
-  >div{
-    margin: 36px 28px;
-  }
 `;
