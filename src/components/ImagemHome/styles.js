@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   grid-area: content;
 
-  width: 90%;
+  width: 376px;
   height: 120px;
 
   margin: 44px auto ;
@@ -40,11 +40,12 @@ export const Container = styled.div`
   
   >img{
     border: none;
-    position: absolute;
+    position: relative;
+    z-index: 1;
     width: 191px;
     height: 149px;
-    left: 0px;
-    top: 160px;
+    left: 30px;
+    bottom: 30px;
   }
 
 `;
