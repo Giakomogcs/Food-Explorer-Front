@@ -7,11 +7,11 @@ export const Container = styled.header`
   width: 100%;
 
   display: flex;
-
   align-items: center;
   justify-content: left;
   padding: 56px 24px 28px;
   gap: 16px;
+
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};
 

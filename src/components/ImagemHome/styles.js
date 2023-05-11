@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  grid-area: content;
+  
 
   width: 376px;
   height: 120px;
 
-  margin: 44px auto ;
+  margin: 44px ;
 
   display: flex;
 

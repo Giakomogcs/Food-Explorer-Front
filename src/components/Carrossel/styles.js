@@ -1,20 +1,52 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
-  grid-area: header;
-  position: fixed;
-  z-index: 2;
+export const Container = styled.section`
 
-  height: 144px;
-  width: 100%;
+
+  max-height: 341px;
+  max-width: 428px;
 
   display: flex;
+  flex-direction: column;
 
+  margin-left: 24px;
+  margin-bottom: 24px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  color: ${({theme}) => theme.COLORS.LIGHT_300};
+
+  >p{
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+
+`;
+
+export const Card = styled.div`
+  
+
+  width: 210px;
+  height: 292px;
+
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 56px 24px 28px;
+  justify-content: center;
+  gap: 12px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  background-color: ${({theme}) => theme.COLORS.DARK_300};
+  color: ${({theme}) => theme.COLORS.LIGHT_300};
 
-  background-color: ${({theme}) => theme.COLORS.DARK_700};
+  >p{
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+  }
 
 `;
 

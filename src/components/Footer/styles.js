@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
-  grid-area: footer;
+export const Container = styled.footer`
+
+  position: static;
+
+  overflow: hidden;
 
   height: 77px;
-  width: 100%;
+  
   padding: 24px auto;
 
   display: flex;
