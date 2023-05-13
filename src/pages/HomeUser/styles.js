@@ -44,29 +44,34 @@ export const Pratos = styled.ul`
   flex-direction: row;
   gap: 12px;
 
-  >li{
-    min-width: 210px;
-    min-height: 292px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    background-color: ${({theme}) => theme.COLORS.DARK_300};
-    color: ${({theme}) => theme.COLORS.LIGHT_300};
-
-    >p{
-      font-size: 14px;
-      line-height: 24px;
-      text-align: center;
-    }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 20px;
+    height: 10px;
   }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #001119;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4D585E;
+    border-radius: 10px;
+  }
+
 `;
 
 export const FooterHome = styled.footer`
   grid-area: footer;
+`;
+
+export const Picture = styled.div`
+  height: 88px;
+  width: 88px;
+
+  border-radius: 50%;
+
 `;

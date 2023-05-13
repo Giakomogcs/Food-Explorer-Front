@@ -1,4 +1,4 @@
-import { Container, Card} from "./styles";
+import { Container } from "./styles";
 
 import {AiOutlineMenu} from'react-icons/ai'
 
