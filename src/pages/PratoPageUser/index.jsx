@@ -3,7 +3,7 @@ import { Container, Content} from "./styles"
 import {TbMathLower} from 'react-icons/tb'
 
 import { Button } from "../../components/Button"
-import { HeaderMenu } from "../../components/HeaderMenu"
+import { HeaderUser } from "../../components/HeaderUser"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
@@ -11,7 +11,7 @@ import {TagPratoPage} from "../../components/TagPratoPage"
 export function PratoPageUser(){
   return(
     <Container>
-      <HeaderMenu/>
+      <HeaderUser/>
 
       <Content>
 
@@ -23,9 +23,12 @@ export function PratoPageUser(){
         <Session>
           <TagPratoPage title="Sopa"/>
         </Session>
-      </Content>
 
-      <Footer/>
+      </Content>
+      
+      <footer>
+        <Footer/>
+      </footer>
       
     </Container>
   )

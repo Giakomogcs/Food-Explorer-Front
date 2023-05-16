@@ -15,6 +15,13 @@ export const Container = styled.div`
   "content"
   "footer";
 
+  >header{
+    grid-area: header;
+  }
+
+  >footer{
+    grid-area: footer;
+  }
 `;
 
 export const Content = styled.div`
@@ -64,9 +71,7 @@ export const Pratos = styled.ul`
 
 `;
 
-export const FooterHome = styled.footer`
-  grid-area: footer;
-`;
+
 
 export const Picture = styled.div`
   height: 88px;
@@ -75,4 +80,5 @@ export const Picture = styled.div`
   border-radius: 50%;
 
 `;
+
 

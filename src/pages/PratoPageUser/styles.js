@@ -5,6 +5,8 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
+  position: relative;
+
   display: grid;
   grid-template-rows: 144px auto 77px;
 
@@ -13,9 +15,14 @@ export const Container = styled.div`
   "content"
   "footer";
 
+  >footer{
+    grid-area: footer;
+  }
+
   `;
 
 export const Content = styled.div`
+  grid-area: content;
   padding: 34px 56px;
   
   >button{

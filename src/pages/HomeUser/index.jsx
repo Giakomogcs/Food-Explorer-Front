@@ -10,7 +10,9 @@ import { Footer } from "../../components/Footer"
 export function HomeUser(){
   return(
     <Container>
-      <HeaderUser/>
+      <header>
+        <HeaderUser/>
+      </header>
 
       <Content>
         <ImagemHome/>
@@ -47,9 +49,9 @@ export function HomeUser(){
 
       </Content>
 
-      <FooterHome>
+      <footer>
         <Footer/>
-      </FooterHome>
+      </footer>
     </Container>
   )
 }
