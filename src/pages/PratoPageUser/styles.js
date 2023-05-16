@@ -13,7 +13,31 @@ export const Container = styled.div`
   "content"
   "footer";
 
-  >div{
-    margin: 36px 28px;
+  `;
+
+export const Content = styled.div`
+  padding: 34px 56px;
+  
+  >button{
+    display: flex;
+  
+    height: 34px;
+    width: auto;
+    align-items: start;
+  
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+  
+    background-color: transparent;
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
+  
+    border: none;
+    
+    >svg{
+      font-size: 22px;
+    }
   }
 `;

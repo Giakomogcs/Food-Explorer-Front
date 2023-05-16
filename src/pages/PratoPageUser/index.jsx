@@ -1,24 +1,29 @@
-import { Container} from "./styles"
+import { Container, Content} from "./styles"
 
-import {FiSearch} from 'react-icons/fi'
+import {TbMathLower} from 'react-icons/tb'
 
 import { Button } from "../../components/Button"
 import { HeaderMenu } from "../../components/HeaderMenu"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
-import {Input} from "../../components/SearchBar"
+import {TagPratoPage} from "../../components/TagPratoPage"
 
 export function PratoPageUser(){
   return(
     <Container>
       <HeaderMenu/>
 
+      <Content>
 
-      <div>
-        <Input placeholder = "Busque por pratos ou ingredientes" icon={FiSearch}/>
+        <button>
+          <TbMathLower/>
+          voltar
+        </button>
         
-        <Session title="Sair"/>
-      </div>
+        <Session>
+          <TagPratoPage title="Sopa"/>
+        </Session>
+      </Content>
 
       <Footer/>
       

@@ -58,7 +58,7 @@ export const Pratos = styled.ul`
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #4D585E;
+    background: #192227;
     border-radius: 10px;
   }
 
