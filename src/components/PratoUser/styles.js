@@ -53,3 +53,38 @@ export const Picture = styled.div`
   }
 
 `;
+
+export const Include = styled.div`
+  width: 162px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  >div{
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+
+    >svg{
+      font-size: 24px;
+    }
+
+    >label{
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+
+      padding: 3px;
+
+    }
+  }
+
+  >button{
+    height: 32px;
+  }
+`;

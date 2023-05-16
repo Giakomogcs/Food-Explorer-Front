@@ -7,9 +7,6 @@ import {PratoUser} from "../../components/PratoUser"
 
 import { Footer } from "../../components/Footer"
 
-import {FiHeart} from 'react-icons/fi'
-
-
 export function HomeUser(){
   return(
     <Container>
@@ -21,15 +18,32 @@ export function HomeUser(){
         <Carrossel title="Refeições">
           <Pratos>
 
-            <PratoUser title="Salada >" price="49,97" />
-            <PratoUser title="Tomate >" price="39,97" />
-            <PratoUser title="Cenoura >" price="9,97" />
+            <PratoUser title="Salada >" price="R$ 49,97"/>
+            <PratoUser title="Tomate >" price="R$ 39,97" />
+            <PratoUser title="Cenoura >" price="R$ 9,97" />
 
           </Pratos>
         </Carrossel>
 
-        
+        <Carrossel title="Pratos principais">
+          <Pratos>
 
+            <PratoUser title="Salada >" price="R$ 49,97"/>
+            <PratoUser title="Tomate >" price="R$ 39,97" />
+            <PratoUser title="Cenoura >" price="R$ 9,97" />
+
+          </Pratos>
+        </Carrossel>
+
+        <Carrossel title="Bebidas">
+          <Pratos>
+
+            <PratoUser title="Salada >" price="R$ 49,97"/>
+            <PratoUser title="Tomate >" price="R$ 39,97" />
+            <PratoUser title="Cenoura >" price="R$ 9,97" />
+
+          </Pratos>
+        </Carrossel>
 
       </Content>
 

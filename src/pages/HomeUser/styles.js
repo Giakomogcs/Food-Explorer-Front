@@ -75,3 +75,4 @@ export const Picture = styled.div`
   border-radius: 50%;
 
 `;
+

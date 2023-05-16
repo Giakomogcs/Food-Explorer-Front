@@ -1,6 +1,8 @@
-import { Container, Picture} from "./styles";
+import { Container, Picture, Include} from "./styles";
 
 import {FiHeart} from 'react-icons/fi'
+import {Button} from "../../components/Button"
+import {FiMinus,FiPlus} from 'react-icons/fi'
 
 export function PratoUser({title, price}){
   return(
@@ -21,6 +23,16 @@ export function PratoUser({title, price}){
       <p className="price">
         {price}
       </p>
+
+      <Include>
+        <div>
+          <FiMinus/>
+          <label>01</label>
+          <FiPlus/>
+        </div>
+
+        <Button title="Incluir"/>
+      </Include>
 
     </Container>
   )
