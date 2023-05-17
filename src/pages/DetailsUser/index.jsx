@@ -1,6 +1,6 @@
-import { Container, Content, Details} from "./styles"
+import { Container, Content, Details, Include} from "./styles"
 
-import {TbMathLower} from 'react-icons/tb'
+import {FiMinus,FiPlus} from 'react-icons/fi'
 
 import { Button } from "../../components/Button"
 import { HeaderUser } from "../../components/HeaderUser"
@@ -28,7 +28,11 @@ export function DetailsUser(){
 
           <h2>Salada Ravanello</h2>
 
-          <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+          <p>
+            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+          </p>
 
           <Session id="Cards">
             <TagPratoPage title="Sodfefgefgpa"/>
@@ -40,7 +44,18 @@ export function DetailsUser(){
             <TagPratoPage title="Sopofofoa"/>
             <TagPratoPage title="Sopa"/>
           </Session>
+
+          <Include>
+            <div>
+              <FiMinus/>
+              <label>01</label>
+              <FiPlus/>
+            </div>
+
+            <Button className="Insert" title="Incluir" img={<img src="public\images\Receipt.svg" alt="icone de receitas"/>} />
+          </Include>
         </Details>
+
 
         
       </Content>
