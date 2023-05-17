@@ -23,6 +23,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   grid-area: content;
+  overflow-y: auto;
   padding: 34px 56px;
   
   >button{
@@ -30,7 +31,8 @@ export const Content = styled.div`
   
     height: 34px;
     width: auto;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
   
     font-family: 'Poppins';
     font-style: normal;
@@ -42,9 +44,53 @@ export const Content = styled.div`
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   
     border: none;
-    
-    >svg{
-      font-size: 22px;
+
+  }
+
+  
+  .Voltar{
+    margin-bottom: 16px;
+
+    >.Smaller{
+      height: 22px;
+      width: 12px;
+      margin-right: 11px;
     }
   }
+  
+  `;
+
+export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  .Prato{
+    height: 264px;
+    width: 264px;
+    border-radius: 50%;
+    
+    margin-bottom: 16px;
+  }
+  
+  >button{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    >h2{
+      display: none;
+    }
+    
+    >span {
+      margin-right: 24px;
+    }
+  
+    > span:last-child{
+      margin-right: 0px;
+    }
+  }
+
 `;

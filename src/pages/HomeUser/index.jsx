@@ -1,4 +1,4 @@
-import { Container, Content, Pratos, FooterHome, Picture} from "./styles"
+import { Container, Content, Pratos, Picture} from "./styles"
 
 import { HeaderUser } from "../../components/HeaderUser"
 import {ImagemHome} from "../../components/ImagemHome"

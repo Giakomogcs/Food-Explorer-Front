@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {PratoPageUser} from './pages/PratoPageUser'
+import {DetailsUser} from './pages/DetailsUser'
 import {HomeUser} from './pages/HomeUser'
+import {Menu} from './pages/Menu'
 
 import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
@@ -13,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider  theme={theme}>
       <GlobalStyles/>
-      <HomeUser />
+      <DetailsUser />
     </ThemeProvider>
   </React.StrictMode>,
 )

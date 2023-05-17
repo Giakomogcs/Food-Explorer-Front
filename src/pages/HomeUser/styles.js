@@ -72,7 +72,6 @@ export const Pratos = styled.ul`
 `;
 
 
-
 export const Picture = styled.div`
   height: 88px;
   width: 88px;
