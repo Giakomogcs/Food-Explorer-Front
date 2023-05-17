@@ -61,6 +61,10 @@ export const Content = styled.div`
   `;
 
 export const Details = styled.div`
+  font-family: 'Poppins';
+  font-style: normal;
+  color: ${({theme}) => theme.COLORS.LIGHT_300};
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,24 +77,41 @@ export const Details = styled.div`
     
     margin-bottom: 16px;
   }
+
+  >h2{
+    height: 38px;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 140%;
+
+    margin-bottom: 24px;
+  }
+
+  >p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 24px;
+  }
   
   >button{
+
+    max-width: 316px;
+    height: auto;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 24px;
+
     
     >h2{
       display: none;
     }
     
-    >span {
-      margin-right: 24px;
-    }
-  
-    > span:last-child{
-      margin-right: 0px;
-    }
   }
 
 `;
