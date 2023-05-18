@@ -1,4 +1,4 @@
-import { Container, Content, Details, Include} from "./styles"
+import { Container, Content, Details} from "./styles"
 
 import {FiMinus,FiPlus} from 'react-icons/fi'
 
@@ -8,7 +8,7 @@ import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
 
-export function DetailsUser(){
+export function DetailsAdmin(){
   return(
     <Container>
       <HeaderUser/>
@@ -45,15 +45,7 @@ export function DetailsUser(){
             <TagPratoPage title="Sopa"/>
           </Session>
 
-          <Include>
-            <div>
-              <FiMinus/>
-              <label>01</label>
-              <FiPlus/>
-            </div>
-
-            <Button className="Insert" title="Incluir" img={<img src="public\images\Receipt.svg" alt="icone de receitas"/>} />
-          </Include>
+          <Button className="Insert" title="Editar prato" />
         </Details>
 
 

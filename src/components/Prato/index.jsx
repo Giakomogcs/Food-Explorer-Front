@@ -4,11 +4,11 @@ import {FiHeart} from 'react-icons/fi'
 import {Button} from "../../components/Button"
 import {FiMinus,FiPlus} from 'react-icons/fi'
 
-export function PratoUser({title, price}){
+export function Prato({title, price, icon: Icon}){
   return(
     <Container>
 
-      <FiHeart/>
+      {Icon && <Icon size={24}/>}
       <Picture>
         <img 
           src="https://github.com/giakomogcs.png" 

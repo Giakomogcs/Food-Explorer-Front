@@ -8,7 +8,7 @@ import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {Input} from "../../components/SearchBar"
 
-export function Menu(){
+export function MenuUser(){
   return(
     <Container>
       <HeaderMenu/>

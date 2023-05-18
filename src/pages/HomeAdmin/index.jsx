@@ -7,9 +7,9 @@ import {Prato} from "../../components/Prato"
 
 import { Footer } from "../../components/Footer"
 
-import {FiHeart} from 'react-icons/fi'
+import {BsPencil} from 'react-icons/bs'
 
-export function HomeUser(){
+export function HomeAdmin(){
   return(
     <Container>
       <header>
@@ -22,19 +22,18 @@ export function HomeUser(){
         <Carrossel title="Refeições">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
-
+            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
           </Pratos>
         </Carrossel>
 
         <Carrossel title="Pratos principais">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
 
           </Pratos>
         </Carrossel>
@@ -42,9 +41,9 @@ export function HomeUser(){
         <Carrossel title="Bebidas">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
 
           </Pratos>
         </Carrossel>
