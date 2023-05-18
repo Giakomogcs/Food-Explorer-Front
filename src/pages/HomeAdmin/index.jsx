@@ -1,6 +1,6 @@
 import { Container, Content, Pratos, Picture} from "./styles"
 
-import { HeaderUser } from "../../components/HeaderUser"
+import { HeaderAdmin } from "../../components/HeaderAdmin"
 import {ImagemHome} from "../../components/ImagemHome"
 import {Carrossel} from "../../components/Carrossel"
 import {Prato} from "../../components/Prato"
@@ -13,7 +13,7 @@ export function HomeAdmin(){
   return(
     <Container>
       <header>
-        <HeaderUser/>
+        <HeaderAdmin/>
       </header>
 
       <Content>
