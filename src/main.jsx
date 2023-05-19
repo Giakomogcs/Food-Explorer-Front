@@ -13,6 +13,8 @@ import {MenuUser} from './pages/MenuUser'
 import {SignIn} from './pages/SignIn'
 import {SignUp} from './pages/SignUp'
 
+import {NewPrato} from './pages/NewPrato'
+
 import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 
@@ -23,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider  theme={theme}>
       <GlobalStyles/>
-      <SignUp />
+      <NewPrato />
     </ThemeProvider>
   </React.StrictMode>,
 )

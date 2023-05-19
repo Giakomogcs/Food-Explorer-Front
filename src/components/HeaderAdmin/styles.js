@@ -11,7 +11,7 @@ export const Container = styled.header`
   display: flex;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 56px 24px 28px;
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};
@@ -26,7 +26,8 @@ export const Content = styled.div`
   display: flex;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
   
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};

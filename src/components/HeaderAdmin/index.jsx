@@ -19,12 +19,6 @@ export function HeaderAdmin(){
           />
         </Logo>
 
-        <Receipt>
-          <div>
-            <img src="public\images\Receipt.svg" alt="icon de receitas" />
-            <span>1</span>
-          </div>
-        </Receipt>
       </Content>
 
     </Container>
