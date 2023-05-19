@@ -10,6 +10,8 @@ import {HomeAdmin} from './pages/HomeAdmin'
 import {MenuAdmin} from './pages/MenuAdmin'
 import {MenuUser} from './pages/MenuUser'
 
+import {SignIn} from './pages/SignIn'
+
 import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 
@@ -20,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider  theme={theme}>
       <GlobalStyles/>
-      <HomeAdmin />
+      <SignIn />
     </ThemeProvider>
   </React.StrictMode>,
 )

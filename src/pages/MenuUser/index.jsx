@@ -14,11 +14,14 @@ export function MenuUser(){
       <HeaderMenu/>
 
 
-      <div>
-        <Input placeholder = "Busque por pratos ou ingredientes" icon={FiSearch}/>
+      <form>
+        <Input 
+          placeholder = "Busque por pratos ou ingredientes" 
+          icon={FiSearch}
+        />
         
         <Session title="Sair"/>
-      </div>
+      </form>
 
       <Footer/>
       

@@ -7,20 +7,18 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  gap: 14px;
-
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border-radius: 5px;
 
   svg{
-    margin-left: 16px;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
+    margin-left: 16px;
   }
 
   >input{
     height: 48px;
     width: 100%;
-    padding: 24px auto;
+    padding: 16px;
     
 
     font-family: 'Roboto';
@@ -31,8 +29,10 @@ export const Container = styled.div`
 
     background: transparent;
     border: 0;
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
 
     &:placeholder{
+      //margin-left: 16px;
       color: ${({theme}) => theme.COLORS.LIGHT_500};
     }
   }
