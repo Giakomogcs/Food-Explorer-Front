@@ -12,38 +12,37 @@ export function SignUp(){
       </header>
 
       <Form>
-      <div>
-          <label htmlFor="Nome">
-            Seu Nome
-          </label>
+        
+        <label htmlFor="Nome">
+          <p>Seu Nome</p>
           <Input
             placeholder="Exemplo: Giovani Costa Silva"
             type="text"
-            name="Nome"
+            id="Nome"
           />
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="Email">
-            E-mail
-          </label>
+
+      
+        <label htmlFor="Email">
+          <p>E-mail</p>
           <Input
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="text"
-            name="Email"
+            id="Email"
           />
-        </div>
-
-        <div>
-          <label htmlFor="Password">
-            Password
-          </label>
+        </label>
+    
+       
+        <label htmlFor="Password">
+          <p>Password</p>
           <Input
             placeholder="No mínimo 6 caracteres"
             type="password"
-            name="Password"
+            id="Password"
           />
-        </div>
+        </label>
+        
 
         <Button title="Criar conta"/>
         

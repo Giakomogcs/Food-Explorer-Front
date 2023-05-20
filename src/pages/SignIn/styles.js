@@ -26,14 +26,14 @@ export const Form = styled.form`
   height: auto;
   padding: 0 56px;
 
-  >div{
+  >label{
     display: flex;
     flex-direction: column;
     justify-content: right;
     gap: 8px;
   }
 
-  >label{
+  >p{
     height: 16px;
     width: auto;
 

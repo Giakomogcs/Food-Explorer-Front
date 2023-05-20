@@ -30,7 +30,7 @@ export const Content = styled.div`
   >button{
     display: flex;
   
-    height: 34px;
+    height: 23px;
     width: auto;
     align-items: center;
     justify-content: center;
@@ -45,12 +45,11 @@ export const Content = styled.div`
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   
     border: none;
-
   }
 
   
   .Voltar{
-    margin-bottom: 16px;
+    margin-bottom: 35px;
 
     >.Smaller{
       height: 22px;
@@ -58,74 +57,119 @@ export const Content = styled.div`
       margin-right: 11px;
     }
   }
+
+  >h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 140%;
+    margin-bottom: 35px;
+  }
+
+  >label{
+
+    >p{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      margin-bottom: 8px;
+      color: ${({theme}) => theme.COLORS.LIGHT_400};
+    }
+
+    >input, select{
+      height: 48px;
+      width: 100%;
+      padding: 16px;
+
+      margin-bottom: 24px;
+
+      background-color: ${({theme}) => theme.COLORS.DARK_800};
+      
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+
+      border-radius: 5px;
+      border: 0;
+      color: ${({theme}) => theme.COLORS.LIGHT_300};
+
+      &:placeholder{
+        //margin-left: 16px;
+        color: ${({theme}) => theme.COLORS.LIGHT_500};
+      }
+    }
+    
+
+    >select{
+      background-color: ${({theme}) => theme.COLORS.DARK_900};
+      padding: auto;
+
+      &:placeholder{
+        //margin-left: 16px;
+        color: ${({theme}) => theme.COLORS.LIGHT_400};
+      }
+
+      >option{
+        border: 0;
+        background-color: ${({theme}) => theme.COLORS.DARK_800};
+      }
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+
+    
+  }
+
   
   `;
 
-export const Details = styled.div`
-  font-family: 'Poppins';
-  font-style: normal;
-  color: ${({theme}) => theme.COLORS.LIGHT_300};
+export const Picture = styled.div`
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  .Prato{
-    height: 264px;
-    width: 264px;
-    border-radius: 50%;
-    
+  >p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: ${({theme}) => theme.COLORS.LIGHT_400};
+
     margin-bottom: 16px;
   }
 
-  >h2{
-    height: 38px;
-    font-weight: 500;
-    font-size: 27px;
-    line-height: 140%;
-
-    margin-bottom: 24px;
-  }
-
-  >p{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  
-  >button{
-
-    margin: 0;
-    //max-width: 316px;
-    height: auto;
-
+  >label{
+    height: 48px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 8px;
 
-    gap: 24px;
+    background-color: ${({theme}) => theme.COLORS.DARK_800};
+    border-radius: 5px;
+    margin-bottom: 24px;
 
-    color: ${({theme}) => theme.COLORS.LIGHT_100};
-    
-    >h2{
+    >p{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    svg{
+      color: ${({theme}) => theme.COLORS.LIGHT_100};
+      margin-left: 16px;
+      font-size: 24px;
+    }
+
+    >input{
       display: none;
     }
-    
-  }
 
-  .Insert{
-    width: 188px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-
-    margin-top: 48px;
   }
 `;
