@@ -16,4 +16,11 @@ export const Container = styled.div`
   >form{
     margin: 36px 28px;
   }
+
+  >button{
+    width: 100%;
+    height: auto;
+    background: none;
+    border: none;
+  }
 `;

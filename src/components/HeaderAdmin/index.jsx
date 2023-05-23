@@ -14,8 +14,12 @@ export function HeaderAdmin(){
         </Menu>
 
         <Logo>
+          <img className="Logo"
+            src="public\images\Logo_user.svg" alt="Logo para usuários" 
+          />
+          
           <img 
-            src="public\images\Logo_admin.svg" alt="Logo para usuários" 
+            src="public\images\admin.svg" alt="icon Menu" 
           />
         </Logo>
 

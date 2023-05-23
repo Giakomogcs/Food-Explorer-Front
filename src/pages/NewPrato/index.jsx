@@ -7,7 +7,7 @@ import {Input} from "../../components/SearchBar"
 import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
-import {TagPratoPage} from "../../components/TagPratoPage"
+import {TagsAdmin} from "../../components/TagsAdmin"
 
 export function NewPrato(){
   return(
@@ -54,6 +54,13 @@ export function NewPrato(){
             <option value="Refeição">Bebidas</option>
           </select>
         </label>
+
+        <Session title={"Igredientes"}>
+          <div className="tags">
+            <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
+            <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" isNew/>
+          </div>
+        </Session>
 
       </Content>
       

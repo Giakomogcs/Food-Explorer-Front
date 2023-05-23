@@ -24,8 +24,16 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   grid-area: content;
+  width: auto;
   
   padding: 34px 56px;
+
+  >div{
+    >button{
+      display: none;
+    }
+  }
+
   
   >button{
     display: flex;
@@ -48,7 +56,6 @@ export const Content = styled.div`
 
   }
 
-  
   .Voltar{
     margin-bottom: 16px;
 
@@ -70,6 +77,12 @@ export const Details = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .spare{
+    height: auto;
+    display: flex;
+    gap: 40px;
+  }
   
   .Prato{
     height: 264px;
@@ -95,26 +108,25 @@ export const Details = styled.div`
     text-align: center;
     margin-bottom: 24px;
   }
-  
-  >button{
 
-    //max-width: 316px;
+  div{
     height: auto;
-
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-
     gap: 24px;
-
-    color: ${({theme}) => theme.COLORS.LIGHT_100};
     
-    >h2{
+    gap: 24px;
+    color: ${({theme}) => theme.COLORS.LIGHT_100};
+
+    button{
+      margin: 0;
       display: none;
     }
     
   }
+  
 
 `;
 

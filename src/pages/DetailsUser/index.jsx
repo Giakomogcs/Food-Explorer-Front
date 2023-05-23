@@ -34,26 +34,27 @@ export function DetailsUser(){
             Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
           </p>
 
-          <Session>
-            <TagPratoPage title="Sodfefgefgpa"/>
-            <TagPratoPage title="Sopa"/>
-            <TagPratoPage title="Sopa"/>
-            <TagPratoPage title="Sopa"/>
-            <TagPratoPage title="carai de asa"/>
-            <TagPratoPage title="Sopa"/>
-            <TagPratoPage title="Sopofofoa"/>
-            <TagPratoPage title="Sopa"/>
-          </Session>
+            <Session>
+                <TagPratoPage title="Sodfefgefgpa"/>
+                <TagPratoPage title="Sopa"/>
+                <TagPratoPage title="Sopa"/>
+                <TagPratoPage title="Sopa"/>
+                <TagPratoPage title="carai de asa"/>
+                <TagPratoPage title="Sopa"/>
+                <TagPratoPage title="Sopofofoa"/>
+                <TagPratoPage title="Sopa"/>
+            </Session>
 
-          <Include>
-            <div>
-              <FiMinus/>
-              <label>01</label>
-              <FiPlus/>
-            </div>
+            <Include>
+              <div>
+                <FiMinus/>
+                <label>01</label>
+                <FiPlus/>
+              </div>
 
-            <Button className="Insert" title="Incluir" img={<img src="public\images\Receipt.svg" alt="icone de receitas"/>} />
-          </Include>
+              <Button className="Insert" title="Incluir" img={<img src="public\images\Receipt.svg" alt="icone de receitas"/>} />
+            </Include>
+
         </Details>
 
 

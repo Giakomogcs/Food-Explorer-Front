@@ -96,7 +96,7 @@ export const Details = styled.div`
     margin-bottom: 24px;
   }
   
-  >button{
+  >div{
 
     margin: 0;
     //max-width: 316px;
@@ -111,7 +111,7 @@ export const Details = styled.div`
 
     color: ${({theme}) => theme.COLORS.LIGHT_100};
     
-    >h2{
+    >button{
       display: none;
     }
     

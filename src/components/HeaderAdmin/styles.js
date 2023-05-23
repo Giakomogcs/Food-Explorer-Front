@@ -27,7 +27,6 @@ export const Content = styled.div`
 
   align-items: center;
   justify-content: center;
-  gap: 16px;
   
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};
@@ -37,6 +36,9 @@ export const Content = styled.div`
 export const Logo = styled.div`
   display: flex;
   align-items: center;
+  margin: 0 auto;
+
+
 
   > svg {
     height: 26px;
@@ -47,6 +49,7 @@ export const Logo = styled.div`
 export const Menu = styled.button`
   border: none;
   background: none;
+
 
   > svg{
     color: ${({theme}) => theme.COLORS.LIGHT_100};

@@ -19,8 +19,8 @@ export function MenuUser(){
           placeholder = "Busque por pratos ou ingredientes" 
           icon={FiSearch}
         />
-        
-        <Session title="Sair"/>
+
+          <Session title="Sair"/>
       </form>
 
       <Footer/>

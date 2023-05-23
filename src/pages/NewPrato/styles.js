@@ -35,9 +35,9 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
   
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 24px;
     line-height: 140%;
   
@@ -45,9 +45,55 @@ export const Content = styled.div`
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   
     border: none;
+
   }
 
-  
+  >p{
+
+    border-bottom-style:none;
+    padding-left: 0px;
+    margin-top: 24px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: ${({theme}) => theme.COLORS.LIGHT_400};
+  }
+
+  div{
+    
+    .tags{
+      width: 100%;
+      height: auto;
+
+      padding: 5px 8px;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      background-color: ${({theme}) => theme.COLORS.DARK_800};
+    }
+
+    >button{
+      padding: none;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      border-bottom-style: none;
+
+      color: ${({theme}) => theme.COLORS.LIGHT_400};
+    }
+    
+  }
+
+
   .Voltar{
     margin-bottom: 35px;
 
