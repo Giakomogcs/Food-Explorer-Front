@@ -189,25 +189,30 @@ export const Content = styled.div`
     word-break: normal;
   }
 
-  .SaveButton{
-    height: 48px;
-    width: 100%;
-
+  .Buttons{
     display: flex;
-    align-items: center;
-    text-align: center;
-
+    gap: 32px;
     margin-bottom: 50px;
-    padding: 12px 32px;
-    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
 
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
+    >button{
+      padding: 12px 32px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+
+      margin: 0;
+    }
+
+    .SaveButton{
+      background-color: ${({theme}) => theme.COLORS.TOMATO_400};
+    }
+
+    .DeleteButton{
+      background-color: ${({theme}) => theme.COLORS.DARK_800};
+    }
   }
-  
   `;
 
 export const Picture = styled.div`
