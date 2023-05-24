@@ -62,6 +62,26 @@ export function NewPrato(){
           </div>
         </Session>
 
+        <label htmlFor="Price">
+          <p id="Price">Preço</p>
+          <input
+            placeholder="R$ 00,00"
+            type="number"
+            
+          />
+        </label>
+
+        <label htmlFor="Description">
+          <p>Descrição</p>
+          <textarea 
+            placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+            type="text"
+            id="Description"
+          />
+        </label>
+
+        <Button className="SaveButton" title="Salvar Alterações" />
+
       </Content>
       
       <footer>

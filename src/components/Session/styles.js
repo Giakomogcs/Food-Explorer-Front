@@ -4,12 +4,9 @@ export const Container = styled.div`
   
   background: none;
   border: none;
-  height: 54px;
+  height: auto;
   width: 100%;
 
-
-  
-  
   > button{
     font-family: 'Poppins';
     font-weight: 300;

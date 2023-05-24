@@ -40,12 +40,11 @@ export const Content = styled.div`
     font-weight: 400;
     font-size: 24px;
     line-height: 140%;
-  
-    background-color: transparent;
+    
+    
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   
     border: none;
-
   }
 
   >p{
@@ -87,15 +86,15 @@ export const Content = styled.div`
       font-size: 16px;
       line-height: 100%;
       border-bottom-style: none;
+      
 
       color: ${({theme}) => theme.COLORS.LIGHT_400};
     }
-    
   }
-
 
   .Voltar{
     margin-bottom: 35px;
+    background-color: transparent;
 
     >.Smaller{
       height: 22px;
@@ -114,17 +113,22 @@ export const Content = styled.div`
   }
 
   >label{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    overflow: hidden;
+    word-break: break-all;
 
     >p{
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
       line-height: 100%;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       color: ${({theme}) => theme.COLORS.LIGHT_400};
     }
 
-    >input, select{
+    >input, select, textarea {
       height: 48px;
       width: 100%;
       padding: 16px;
@@ -147,31 +151,62 @@ export const Content = styled.div`
         //margin-left: 16px;
         color: ${({theme}) => theme.COLORS.LIGHT_500};
       }
+
     }
-    
 
     >select{
       background-color: ${({theme}) => theme.COLORS.DARK_900};
       padding: auto;
-
+      
       &:placeholder{
         //margin-left: 16px;
         color: ${({theme}) => theme.COLORS.LIGHT_400};
       }
-
+      
       >option{
         border: 0;
         background-color: ${({theme}) => theme.COLORS.DARK_800};
       }
     }
-
+    
     select::-ms-expand {
       display: none;
     }
-
+    
     
   }
+  
+  #Price{
+    margin-top: 24px;
+  }
+  
+  #Description{
+    height: 172px;
+  
+    display: flex;
+    align-items: start;
+    overflow: hidden;
+    word-break: normal;
+  }
 
+  .SaveButton{
+    height: 48px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 50px;
+    padding: 12px 32px;
+    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
   
   `;
 
