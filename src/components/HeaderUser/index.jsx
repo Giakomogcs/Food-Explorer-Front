@@ -5,22 +5,25 @@ import {AiOutlineMenu} from'react-icons/ai'
 export function HeaderUser(){
   return(
     <Container>
-      <Content>
+      <Content className="Content">
 
         <Menu>
-          <img 
-            src="public\images\Menu.svg" alt="icon Menu" 
-          />
+          <div className="Menu">
+            <img 
+              src="public\images\Menu.svg" alt="icon Menu" 
+            />
+          </div>
         </Menu>
 
         <Logo>
           <img 
+            id="Logo"
             src="public\images\Logo_user.svg" alt="Logo para usuários" 
           />
         </Logo>
 
         <Receipt>
-          <div>
+          <div className="Receipt">
             <img src="public\images\Receipt.svg" alt="icon de receitas" />
             <span>1</span>
           </div>

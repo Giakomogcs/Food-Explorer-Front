@@ -91,4 +91,27 @@ export const Receipt = styled.button`
     }
   }
   
+
+
+  @media(min-width: 768px) {
+
+    .Content{
+      padding: 24px 123px;
+    }
+    
+    
+    .Menu{
+      img{
+        display: none;
+      }
+    }
+    
+
+    .Receipt{
+      span{
+        display: none;
+      }
+    }
+    
+  }
 `;

@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider  theme={theme}>
       <GlobalStyles/>
-      <EditPrato />
+      <DetailsUser />
     </ThemeProvider>
   </React.StrictMode>,
 )
