@@ -24,8 +24,16 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   grid-area: content;
+  width: auto;
   
   padding: 34px 56px;
+
+  >div{
+    >button{
+      display: none;
+    }
+  }
+
   
   >button{
     display: flex;
@@ -48,7 +56,6 @@ export const Content = styled.div`
 
   }
 
-  
   .Voltar{
     margin-bottom: 16px;
 
@@ -70,7 +77,12 @@ export const Details = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
+  .Content{
+    height: 100%;
+    margin: 40px 0;
+  }
+
   .Prato{
     height: 264px;
     width: 264px;
@@ -95,29 +107,95 @@ export const Details = styled.div`
     text-align: center;
     margin-bottom: 24px;
   }
-  
-  >div{
 
-    margin: 0;
-    //max-width: 316px;
+  div{
     height: auto;
-
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-
     gap: 24px;
-
-    color: ${({theme}) => theme.COLORS.LIGHT_100};
     
-    >button{
+    gap: 24px;
+    color: ${({theme}) => theme.COLORS.LIGHT_100};
+
+    button{
+      margin: 0;
       display: none;
     }
     
   }
 
+  @media all and (min-width: 920px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+     div{
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .Prato{
+      height: 390px;
+      width: 390px;
+      border-radius: 50%;
+      margin-bottom: 0;
+    }
+
+    h2{
+      font-size: 40px;
+    }
+  }
+  
+
+`;
+
+export const Include = styled.div`
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin-top: 48px;
+
+  >div{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    display: flex;
+    gap: 14px;
+
+    >svg{
+      font-size: 24px;
+    }
+
+    >label{
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 160%;
+    }
+  }
+
+  >button{
+    height: 32px;
+    margin: 0;
+  }
+
   .Insert{
+
     width: 188px;
     height: 38px;
 
@@ -125,7 +203,5 @@ export const Details = styled.div`
     align-items: center;
     justify-content: center;
     gap: 6px;
-
-    margin-top: 48px;
   }
 `;
