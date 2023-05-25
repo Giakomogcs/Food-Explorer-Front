@@ -78,12 +78,11 @@ export const Details = styled.div`
   align-items: center;
   justify-content: center;
 
-  .spare{
-    height: auto;
-    display: flex;
-    gap: 40px;
+  .Content{
+    height: 100%;
+    margin: 40px 0;
   }
-  
+
   .Prato{
     height: 264px;
     width: 264px;
@@ -125,6 +124,31 @@ export const Details = styled.div`
       display: none;
     }
     
+  }
+
+  @media all and (min-width: 920px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+     div{
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .Prato{
+      height: 390px;
+      width: 390px;
+      border-radius: 50%;
+      margin-bottom: 0;
+    }
+
+    h2{
+      font-size: 40px;
+    }
   }
   
 
