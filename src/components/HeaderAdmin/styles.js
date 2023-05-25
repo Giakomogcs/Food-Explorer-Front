@@ -16,6 +16,15 @@ export const Container = styled.header`
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};
 
+  @media all and (min-width: 768px) {
+  
+    height: 104px;
+    padding: 24px 123px;
+
+    display: flex;
+    align-items: center;
+  }
+
 `;
 
 export const Content = styled.div`
@@ -30,6 +39,64 @@ export const Content = styled.div`
   
 
   background-color: ${({theme}) => theme.COLORS.DARK_700};
+  
+  @media all and (max-width: 768px) {
+    .Search {
+      display: none;
+    }
+  
+    .Buttons {
+      display: none;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    
+    .Menu{
+      display: none;
+    }
+    
+    .Search {
+      display: none;
+    }
+  
+    .Buttons {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      >button{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+
+        margin: 0;
+        width: 216px;
+        height: 48px;
+      }
+
+      >svg{
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media all and (min-width: 976px) {
+    .Search {
+      width: 100%;
+      display: flex;
+      div{
+        margin: 0;
+      }
+    }
+  }
 
 `;
 
@@ -37,8 +104,7 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-
-
+  gap: 8px;
 
   > svg {
     height: 26px;
@@ -59,40 +125,3 @@ export const Menu = styled.button`
   }
 `;
 
-export const Receipt = styled.button`
-  border: none;
-  background: none;
-
-  height: 34px;
-
-  >div{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-
-    > img{
-      width: 26px;
-      height: 22px;
-    }
-
-    >span{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      background-color: ${({theme}) => theme.COLORS.TOMATO_100};
-      color: ${({theme}) => theme.COLORS.LIGHT_100};
-
-      
-      border-radius: 50%;
-      
-      font-family: 'Poppins';
-      font-size: 14px;
-      
-      position: relative;
-      left: 15px;
-      bottom: 35px;
-    }
-  }
-  
-`;

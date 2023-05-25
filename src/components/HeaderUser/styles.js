@@ -18,12 +18,12 @@ export const Container = styled.header`
 
   @media all and (min-width: 768px) {
   
-  height: 104px;
-  padding: 24px 123px;
+    height: 104px;
+    padding: 24px 123px;
 
-  display: flex;
-  align-items: center;
-}
+    display: flex;
+    align-items: center;
+  }
 
 `;
 
@@ -45,8 +45,6 @@ export const Content = styled.div`
     display: none;
   }
 
-
-  
   @media all and (max-width: 768px) {
     
     >svg{
