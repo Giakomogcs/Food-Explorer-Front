@@ -110,6 +110,14 @@ export const Logo = styled.div`
     height: 26px;
   }
 
+  @media all and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: end;
+    align-items: end;
+  }
+
 `;
 
 export const Menu = styled.button`
