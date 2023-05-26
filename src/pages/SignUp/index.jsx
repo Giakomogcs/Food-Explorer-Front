@@ -7,11 +7,13 @@ import {Button} from "../../components/Button"
 export function SignUp(){
   return(
     <Container>
-      <header>
+      <div>
         <img src="public\images\Logo_user.svg" alt="Logo header" />
-      </header>
+      </div>
 
       <Form>
+
+        <h1>Crie sua conta</h1>
         
         <label htmlFor="Nome">
           <p>Seu Nome</p>

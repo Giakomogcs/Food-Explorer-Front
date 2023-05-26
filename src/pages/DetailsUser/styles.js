@@ -116,7 +116,6 @@ export const Details = styled.div`
     justify-content: center;
     gap: 24px;
     
-    gap: 24px;
     color: ${({theme}) => theme.COLORS.LIGHT_100};
 
     button{
