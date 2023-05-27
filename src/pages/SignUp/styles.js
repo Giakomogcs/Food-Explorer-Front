@@ -25,6 +25,7 @@ export const Container = styled.div`
 
     padding: 80px 80px;
     gap: 100px;
+    overflow: hidden;
 
     >div{
       display: flex;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   overflow: auto;
 
-  >header{
+  >div{
     display: flex;
     align-items: end;
     justify-content: center;
@@ -14,6 +14,30 @@ export const Container = styled.div`
     img{
       margin: 158px auto 73px;
       height: 44px;
+    }
+  }
+
+  @media all and (min-width: 860PX) {
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 80px;
+    gap: 80px;
+    overflow: hidden;
+
+    >div{
+      width: auto;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img{
+        margin: 0;
+        height: 44px;
+      }
     }
   }
 
@@ -31,6 +55,10 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: right;
     gap: 8px;
+  }
+  
+  h1{
+    display: none;
   }
 
   >p{
@@ -65,4 +93,35 @@ export const Form = styled.form`
     margin: 32px auto 0;
   }
 
+  @media all and (min-width: 860PX) {
+    padding: 64px;
+    border-radius: 16px;
+    min-width: 400px;
+    max-width: 476PX;
+
+    background-color: ${({theme}) => theme.COLORS.DARK_700};
+
+    h1{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 140%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    >label{
+      >p{
+        color: ${({theme}) => theme.COLORS.LIGHT_400};
+      }
+    }
+
+    button{
+      margin: 0;
+    }
+  }
 `;
