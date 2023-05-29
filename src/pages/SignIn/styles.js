@@ -28,8 +28,8 @@ export const Container = styled.div`
     overflow: hidden;
 
     >div{
-      width: auto;
-      margin: 0 auto;
+      width: 50%;
+      
       display: flex;
       align-items: center;
       justify-content: center;
@@ -49,6 +49,7 @@ export const Form = styled.form`
 
   height: auto;
   padding: 0 56px;
+  margin: 0 auto;
 
   >label{
     display: flex;
@@ -96,8 +97,7 @@ export const Form = styled.form`
   @media all and (min-width: 860PX) {
     padding: 64px;
     border-radius: 16px;
-    min-width: 400px;
-    max-width: 476PX;
+    width: 476PX;
 
     background-color: ${({theme}) => theme.COLORS.DARK_700};
 
