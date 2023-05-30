@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
 
   display: grid;
   grid-template-rows: 144px auto 77px;
@@ -73,6 +74,7 @@ export const Content = styled.div`
       justify-content: center;
       flex-wrap: wrap;
       gap: 16px;
+      border-radius: 8px;
 
       background-color: ${({theme}) => theme.COLORS.DARK_800};
     }
@@ -112,68 +114,70 @@ export const Content = styled.div`
     margin-bottom: 35px;
   }
 
-  >label{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    overflow: hidden;
-    word-break: break-all;
+  .Principal, .Segundo, .Terceiro{
+    >label{
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      overflow: hidden;
+      word-break: break-all;
 
-    >p{
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-      margin-bottom: 16px;
-      color: ${({theme}) => theme.COLORS.LIGHT_400};
-    }
-
-    >input, select, textarea {
-      height: 48px;
-      width: 100%;
-      padding: 16px;
-
-      margin-bottom: 24px;
-
-      background-color: ${({theme}) => theme.COLORS.DARK_800};
-      
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-
-      border-radius: 5px;
-      border: 0;
-      color: ${({theme}) => theme.COLORS.LIGHT_500};
-
-      &:placeholder{
-        //margin-left: 16px;
-        color: ${({theme}) => theme.COLORS.LIGHT_500};
-      }
-
-    }
-
-    >select{
-      background-color: ${({theme}) => theme.COLORS.DARK_900};
-      padding: auto;
-      
-      &:placeholder{
-        //margin-left: 16px;
+      >p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        margin-bottom: 16px;
         color: ${({theme}) => theme.COLORS.LIGHT_400};
       }
-      
-      >option{
-        border: 0;
+
+      >input, select, textarea {
+        height: 48px;
+        width: 100%;
+        padding: 16px;
+
+        margin-bottom: 24px;
+
         background-color: ${({theme}) => theme.COLORS.DARK_800};
+        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+
+        border-radius: 5px;
+        border: 0;
+        color: ${({theme}) => theme.COLORS.LIGHT_500};
+
+        &:placeholder{
+          //margin-left: 16px;
+          color: ${({theme}) => theme.COLORS.LIGHT_500};
+        }
+
       }
+
+      >select{
+        background-color: ${({theme}) => theme.COLORS.DARK_900};
+        padding: auto;
+        
+        &:placeholder{
+          //margin-left: 16px;
+          color: ${({theme}) => theme.COLORS.LIGHT_400};
+        }
+        
+        >option{
+          border: 0;
+          background-color: ${({theme}) => theme.COLORS.DARK_800};
+        }
+      }
+      
+      select::-ms-expand {
+        display: none;
+      }
+      
+      
     }
-    
-    select::-ms-expand {
-      display: none;
-    }
-    
-    
   }
   
   #Price{
@@ -191,28 +195,107 @@ export const Content = styled.div`
 
   .Buttons{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 32px;
+  }
+
+  .SaveButton{
+    height: 48px;
+    width: 200px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
     margin-bottom: 50px;
+    padding: 12px 32px;
+    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
 
-    >button{
-      padding: 12px 32px;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
 
-      margin: 0;
+  .DeleteButton{
+    height: 48px;
+    width: 200px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    margin-bottom: 50px;
+    padding: 12px 32px;
+    background-color: ${({theme}) => theme.COLORS.DARK_800};
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @media all and (min-width: 768px) {
+    padding: 0px 56px 34px;
+  }
+
+  @media all and (min-width: 920px) {
+    
+    .Principal, .Segundo, .Terceiro{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+
+
+      >.Nome{
+        width: 100%;
+        min-width: 230px;
+      }
+      >.Categoria{
+        min-width: 250px;
+      }
+
+      .Description{
+        width: 100%;
+      }
+
     }
 
-    .SaveButton{
-      background-color: ${({theme}) => theme.COLORS.TOMATO_400};
+    >div{
+      .tags{
+        justify-content: start;
+      }
     }
 
-    .DeleteButton{
-      background-color: ${({theme}) => theme.COLORS.DARK_800};
+    .Buttons{
+      
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 32px;
+
+      >button{
+        margin: 0;
+      }
+    }
+  
+    .SaveButton .DeleteButton{
+      display: flex;
+      align-items: center;
+      text-align: center;
     }
   }
+ 
+  
+  
   `;
 
 export const Picture = styled.div`
@@ -257,5 +340,11 @@ export const Picture = styled.div`
       display: none;
     }
 
+  }
+
+  @media all and (min-width: 920px) {
+   
+    min-width: 250px;
+    
   }
 `;

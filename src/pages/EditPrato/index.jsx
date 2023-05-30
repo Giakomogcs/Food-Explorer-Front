@@ -20,71 +20,74 @@ export function EditPrato(){
           voltar
         </button>
 
-        <h1>Editar Prato</h1>
+        <h1>Editar prato</h1>
 
-        <Picture>
-          <p>Imagem do prato</p>
+        <div className="Principal">
+          <Picture>
+            <p>Imagem do prato</p>
 
-          <label htmlFor="picture">
-            <FiUpload/>
-            <p>Selecione imagem para alterá-la</p>
+            <label htmlFor="picture">
+              <FiUpload/>
+              <p>Selecione imagem</p>
+              <input
+                type="file"
+                id="picture"
+              />
+            </label>
+          </Picture>
+
+          <label htmlFor="Nome" className="Nome">
+            <p>Nome</p>
             <input
-              type="file"
-              id="picture"
+              placeholder="Exemplo: Salada Ceasar"
+              type="text"
+              id="Nome"
             />
           </label>
-        </Picture>
 
-        <label htmlFor="Nome">
-          <p>Nome</p>
-          <input
-            placeholder="Exemplo: Salada Ceasar"
-            value={"Salada Ceasar"}
-            type="text"
-            id="Nome"
-          />
-        </label>
+          <label htmlFor="Categoria" className="Categoria">
+            <p>Categoria</p>
 
-        <label htmlFor="Categoria">
-          <p>Categoria</p>
+            <select>
+              <option value="Refeição">Refeição</option>
+              <option value="Refeição">Pratos principais</option>
+              <option value="Refeição">Sobremesas</option>
+              <option value="Refeição">Bebidas</option>
+            </select>
+          </label>
 
-          <select>
-            <option value="Refeição">Refeição</option>
-            <option value="Refeição">Pratos principais</option>
-            <option value="Refeição">Sobremesas</option>
-            <option value="Refeição">Bebidas</option>
-          </select>
-        </label>
+        </div>
 
-        <Session title={"Igredientes"}>
-          <div className="tags">
-            <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
-            <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" isNew/>
-          </div>
-        </Session>
+        <div className="Segundo">
+          <Session title={"Igredientes"}>
+            <div className="tags">
+              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
+              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" isNew/>
+            </div>
+          </Session>
 
-        <label htmlFor="Price">
-          <p id="Price">Preço</p>
-          <input
-            value="R$ 40,00"
-            placeholder="R$ 00,00"
-            type="text"
-            
-          />
-        </label>
+          <label htmlFor="Price">
+            <p id="Price">Preço</p>
+            <input
+              placeholder="R$ 00,00"
+              type="text"
+            />
+          </label>
+        </div>
 
-        <label htmlFor="Description">
-          <p>Descrição</p>
-          <textarea 
-            placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-            value={"A Salada César é uma opção refrescante para o verão."}
-            type="text"
-            id="Description"
-          />
-        </label>
+        <div className="Terceiro">
+          <label htmlFor="Description" className="Description">
+            <p>Descrição</p>
+            <textarea 
+              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              type="text"
+              id="Description"
+            />
+          </label>
+        </div>
 
         <div className="Buttons">
-          <Button className="DeleteButton" title="Excluir Prato" />
+          <Button className="DeleteButton" title="Excluir prato" />
           <Button className="SaveButton" title="Salvar Alterações" />
         </div>
 
