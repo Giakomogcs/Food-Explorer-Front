@@ -22,9 +22,12 @@ export function HomeUser(){
         <Carrossel title="Refeições">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={FiHeart}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={FiHeart}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={FiHeart}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={FiHeart}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={FiHeart}/>
 
           </Pratos>
         </Carrossel>
@@ -32,9 +35,9 @@ export function HomeUser(){
         <Carrossel title="Pratos principais">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={FiHeart}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={FiHeart}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={FiHeart}/>
 
           </Pratos>
         </Carrossel>
@@ -42,9 +45,9 @@ export function HomeUser(){
         <Carrossel title="Bebidas">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={FiHeart}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={FiHeart}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={FiHeart}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={FiHeart}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={FiHeart}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={FiHeart}/>
 
           </Pratos>
         </Carrossel>

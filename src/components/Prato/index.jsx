@@ -4,7 +4,7 @@ import {FiHeart} from 'react-icons/fi'
 import {Button} from "../../components/Button"
 import {FiMinus,FiPlus} from 'react-icons/fi'
 
-export function Prato({title, price, icon: Icon}){
+export function Prato({title, description, price, icon: Icon}){
   return(
     <Container>
 
@@ -18,6 +18,10 @@ export function Prato({title, price, icon: Icon}){
 
       <p className="title">
         {title}
+      </p>
+
+      <p className="description">
+        {description}
       </p>
 
       <p className="price">

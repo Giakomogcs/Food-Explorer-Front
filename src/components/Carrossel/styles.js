@@ -4,7 +4,7 @@ export const Container = styled.section`
 
 
   max-height: 341px;
-  max-width: 428px;
+  width: auto;
 
   display: flex;
   flex-direction: column;
@@ -21,6 +21,10 @@ export const Container = styled.section`
     font-size: 18px;
     line-height: 140%;
     margin-bottom: 24px;
+  }
+
+  @media all and (min-width: 768px) {
+    max-height: 530px;
   }
 
 `;

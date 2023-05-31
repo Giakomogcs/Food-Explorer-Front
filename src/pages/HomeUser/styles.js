@@ -33,9 +33,22 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
+
+  padding: 0 32px;
+
+  section{
+    width: 95%;
+  }
+
+  >div{
+    width: 100%;
+  }
+
+  @media all and (min-width: 750px) {
+    padding: 0 80px;
+  }
 
 `;
 

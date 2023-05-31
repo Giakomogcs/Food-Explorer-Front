@@ -10,7 +10,7 @@ export const Container = styled.li`
   align-items: center;
   justify-content: initial;
   flex-direction: column;
-  
+  gap: 15px;
   
   font-family: 'Poppins';
   font-style: normal;
@@ -23,7 +23,10 @@ export const Container = styled.li`
     line-height: 24px;
     text-align: center;
 
-    margin-bottom: 12px;
+  }
+
+  .description{
+    display: none;
   }
 
   >.price{
@@ -42,6 +45,43 @@ export const Container = styled.li`
     top: 16px;
   }
 
+  @media all and (min-width: 768px) {
+    min-width: 330px;
+    min-height: 460px;
+
+    .title{
+      font-size: 24px;
+      line-height: 140%;
+    }
+
+    .description{
+      display: flex;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+      color: ${({theme}) => theme.COLORS.LIGHT_400};
+
+      padding: 0 24px;
+
+    }
+
+    .price{
+      font-size: 24px;
+      line-height: 140%;
+    }
+
+    >svg{
+      position: relative;
+      font-size: 24px;
+      left: 130px;
+      top: 16px;
+    }
+
+  }
+
 `;
 
 
@@ -50,6 +90,14 @@ export const Picture = styled.div`
     height: 88px;
     width: 88px;
     border-radius: 50%;
+  }
+
+  @media all and (min-width: 768px) {
+    >img{
+      height: 176px;
+      width: 176px;
+      border-radius: 50%;
+  }
   }
 
 `;
@@ -64,7 +112,6 @@ export const Include = styled.div`
   justify-content: center;
 
   >div{
-    margin-top: 20px;
     display: flex;
     gap: 14px;
 
@@ -86,5 +133,12 @@ export const Include = styled.div`
 
   >button{
     height: 32px;
+    margin: 0;
+  }
+
+  @media all and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
   }
 `;

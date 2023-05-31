@@ -22,18 +22,20 @@ export function HomeAdmin(){
         <Carrossel title="Refeições">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pestoMassa fresca com camarões e pestoMassa fresca com camarões e pesto." price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={BsPencil}/>
           </Pratos>
         </Carrossel>
 
         <Carrossel title="Pratos principais">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={BsPencil}/>
 
           </Pratos>
         </Carrossel>
@@ -41,9 +43,9 @@ export function HomeAdmin(){
         <Carrossel title="Bebidas">
           <Pratos>
 
-            <Prato title="Salada >" price="R$ 49,97" icon={BsPencil}/>
-            <Prato title="Tomate >" price="R$ 39,97" icon={BsPencil}/>
-            <Prato title="Cenoura >" price="R$ 9,97" icon={BsPencil}/>
+            <Prato title="Salada >" description="Massa fresca com camarões e pesto." price="R$ 49,97" icon={BsPencil}/>
+            <Prato title="Tomate >" description="Massa fresca com camarões e pesto." price="R$ 39,97" icon={BsPencil}/>
+            <Prato title="Cenoura >" description="Massa fresca com camarões e pesto." price="R$ 9,97" icon={BsPencil}/>
 
           </Pratos>
         </Carrossel>
