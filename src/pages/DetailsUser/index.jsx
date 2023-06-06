@@ -16,7 +16,7 @@ export function DetailsUser(){
       <Content>
 
         <button className="Voltar">
-          <img className="Smaller" src="public\images\smaller.svg" alt="icone de voltar página"/>
+          <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
           voltar
         </button>
 
@@ -53,7 +53,7 @@ export function DetailsUser(){
                   <FiPlus/>
                 </div>
 
-                <Button className="Insert" title="Incluir" img={<img src="public\images\Receipt.svg" alt="icone de receitas"/>} />
+                <Button className="Insert" title="Incluir" img={<img src="images\Receipt.svg" alt="icone de receitas"/>} />
               </Include>
           </div>
 

@@ -8,7 +8,7 @@ export function SignIn(){
   return(
     <Container>
       <div>
-        <img src="public\images\Logo_user.svg" alt="Logo header" />
+        <img src="images\Logo_user.svg" alt="Logo header" />
       </div>
 
       <Form>

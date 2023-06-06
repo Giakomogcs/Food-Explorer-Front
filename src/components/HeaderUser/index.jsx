@@ -12,14 +12,14 @@ export function HeaderUser(){
 
         <Menu>
           <div className="Menu">
-              <img src="public\images\Menu.svg" alt="icon Menu"/>
+              <img src="images\Menu.svg" alt="icon Menu"/>
           </div>
         </Menu>
 
         <Logo>
           <div className="Logo">
             <img 
-              src="public\images\Logo_user.svg" alt="Logo para usuários" 
+              src="images\Logo_user.svg" alt="Logo para usuários" 
             />
           </div>
         </Logo>
@@ -34,7 +34,7 @@ export function HeaderUser(){
 
         <Receipt>
           <div className="Receipt">
-            <img src="public\images\Receipt.svg" alt="icon de receitas" />
+            <img src="images\Receipt.svg" alt="icon de receitas" />
             <p>Pedidos (0)</p>
             <span>1</span>
           </div>
