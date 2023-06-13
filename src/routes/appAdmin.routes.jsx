@@ -15,7 +15,7 @@ export function AppRoutesAdmin() {
       <Route path='/details/:prato_id' element={<DetailsAdmin/>}/>
 
       <Route path='/new' element={<NewPrato/>}/>
-      <Route path='/edit' element={<EditPrato/>}/>
+      <Route path='/edit/:prato_id' element={<EditPrato/>}/>
 
     </Routes>
   )

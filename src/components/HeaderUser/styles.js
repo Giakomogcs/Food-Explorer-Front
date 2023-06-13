@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 export const Container = styled.header`
 
@@ -85,7 +86,7 @@ export const Logo = styled.div`
 
 `;
 
-export const Menu = styled.button`
+export const Menu = styled(Link)`
   border: none;
   background: none;
 

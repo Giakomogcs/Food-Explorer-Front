@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 export const Container = styled.li`
 
@@ -38,12 +39,17 @@ export const Container = styled.li`
     color: ${({theme}) => theme.COLORS.CAKE_200};
   }
 
+  
   >svg{
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
     position: relative;
     font-size: 24px;
     left: 80px;
     top: 16px;
+
+    cursor: pointer;
   }
+  
 
   @media all and (min-width: 768px) {
     min-width: 330px;
@@ -73,12 +79,15 @@ export const Container = styled.li`
       line-height: 140%;
     }
 
+    
     >svg{
       position: relative;
       font-size: 24px;
       left: 130px;
       top: 16px;
+      cursor: pointer;
     }
+  
 
   }
 
@@ -90,6 +99,7 @@ export const Picture = styled.div`
     height: 88px;
     width: 88px;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   @media all and (min-width: 768px) {
@@ -117,6 +127,7 @@ export const Include = styled.div`
 
     >svg{
       font-size: 24px;
+      cursor: pointer;
     }
 
     >label{

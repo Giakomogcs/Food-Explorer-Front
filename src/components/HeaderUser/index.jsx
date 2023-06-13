@@ -5,12 +5,14 @@ import {Input} from "../../components/SearchBar"
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 
+import {Link} from 'react-router-dom'
+
 export function HeaderUser(){
   return(
     <Container>
       <Content className="Content">
 
-        <Menu>
+        <Menu to="/menu">
           <div className="Menu">
               <img src="images\Menu.svg" alt="icon Menu"/>
           </div>

@@ -1,14 +1,16 @@
 import { Container, Picture, Include} from "./styles";
 
-import {FiHeart} from 'react-icons/fi'
 import {Button} from "../../components/Button"
 import {FiMinus,FiPlus} from 'react-icons/fi'
+
+import {Link} from 'react-router-dom'
+
 
 export function Prato({title, description, price, icon: Icon}){
   return(
     <Container>
-
       {Icon && <Icon size={24}/>}
+
       <Picture>
         <img 
           src="https://github.com/giakomogcs.png" 
