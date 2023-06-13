@@ -19,7 +19,7 @@ export const Container = styled.header`
   font-style: normal;
   font-weight: 400;
 
-  >svg{
+  >.svg{
     margin-left: 16px;
     color: ${({theme}) => theme.COLORS.LIGHT_100};
     font-size: 18px;

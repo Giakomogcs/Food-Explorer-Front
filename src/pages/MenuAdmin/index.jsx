@@ -7,6 +7,8 @@ import { HeaderMenu } from "../../components/HeaderMenu"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {Input} from "../../components/SearchBar"
+import {Link} from 'react-router-dom'
+
 
 export function MenuAdmin(){
   return(
@@ -17,7 +19,9 @@ export function MenuAdmin(){
       <div>
         <Input placeholder = "Busque por pratos ou ingredientes" icon={FiSearch}/>
         
-        <Session title="Novo prato"/>
+        <Link to="/new">
+          <Session title="Novo prato"/>
+        </Link>
         <Session title="Sair"/>
       </div>
 

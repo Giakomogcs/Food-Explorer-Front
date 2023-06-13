@@ -8,6 +8,8 @@ import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
 
+import {Link} from 'react-router-dom'
+
 export function DetailsAdmin(){
   return(
     <Container>
@@ -15,10 +17,12 @@ export function DetailsAdmin(){
 
       <Content>
 
-        <button className="Voltar">
-          <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
-          voltar
-        </button>
+        <Link to="/" className="Voltar">
+          <button >
+            <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
+            voltar
+          </button>
+        </Link>
 
         <Details>
           <img className="Prato"

@@ -3,6 +3,8 @@ import { Container, Menu, Logo, Content  } from "./styles";
 import {Input} from "../../components/SearchBar"
 import { Button } from "../../components/Button"
 
+import {Link} from 'react-router-dom'
+
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 
@@ -12,7 +14,7 @@ export function HeaderAdmin(){
       <Content>
 
         <div className="Menu">
-          <Menu>
+          <Menu to="/menu">
             <img 
               src="images\Menu.svg" alt="icon Menu" 
             />
@@ -37,7 +39,9 @@ export function HeaderAdmin(){
         </div>
 
         <div className="Buttons">
-          <Button title="Novo prato" />
+          <Link to="/new" className="Buttons">
+            <Button title="Novo prato" />
+          </Link>
 
           <RxExit/>
         </div>
