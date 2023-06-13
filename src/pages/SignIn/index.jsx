@@ -1,11 +1,17 @@
+import { useContext } from "react"
 import { Container,Form} from "./styles"
 
 import {Link} from 'react-router-dom'
 import {Input} from "../../components/SearchBar"
 import {Button} from "../../components/Button"
 
+import { Mycontext } from "../../mycontext"
+
 
 export function SignIn(){
+
+  const data = useContext(Mycontext)
+  console.log(data)
   return(
     <Container>
       <div>
