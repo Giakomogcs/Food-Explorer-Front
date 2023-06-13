@@ -62,6 +62,7 @@ export const Container = styled.li`
 
     .description{
       display: flex;
+      max-width: 330px;
 
       font-family: 'Roboto';
       font-style: normal;

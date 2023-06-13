@@ -144,7 +144,7 @@ export const Container = styled.div`
       width: 550px;
       //height: 149px;
       left: -10px;
-      bottom: 617px;
+      bottom: 633px;
     }
   }
 
