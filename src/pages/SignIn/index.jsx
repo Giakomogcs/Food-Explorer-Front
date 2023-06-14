@@ -1,17 +1,23 @@
-import { useContext } from "react"
+import { useState } from "react"
 import { Container,Form} from "./styles"
 
 import {Link} from 'react-router-dom'
 import {Input} from "../../components/SearchBar"
 import {Button} from "../../components/Button"
 
-import { Mycontext } from "../../mycontext"
+import { useAuth } from "../../hooks/auth"
 
 
 export function SignIn(){
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-  const data = useContext(Mycontext)
-  console.log(data)
+  const {signIn} = useAuth()
+
+  function handleSignIn() {
+    signIn({email, password})
+  }
+
   return(
     <Container>
       <div>
@@ -27,6 +33,7 @@ export function SignIn(){
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="text"
             id="Email"
+            onChange= {e => setEmail(e.target.value)}
           />
         </label>
 
@@ -36,10 +43,12 @@ export function SignIn(){
             placeholder="No mínimo 6 caracteres"
             type="password"
             id="Password"
+            onChange= {e => setPassword(e.target.value)}
+
           />
         </label>
 
-        <Button title="Entrar"/>
+        <Button title="Entrar" onClick={handleSignIn} />
         
         <Link to="/register">Criar uma conta</Link>
       </Form>
