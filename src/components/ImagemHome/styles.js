@@ -46,7 +46,7 @@ export const Container = styled.div`
     //width: 191px;
     //height: 149px;
     left: -10px;
-    bottom: 715px;
+    bottom: 615px;
   }
 
   @media all and (min-width: 570px) {
@@ -63,7 +63,7 @@ export const Container = styled.div`
       //width: 191px;
       //height: 149px;
       left: 30px;
-      bottom: 715px;
+      bottom: 615px;
     }
 
   }
@@ -104,7 +104,7 @@ export const Container = styled.div`
       width: 350px;
       //height: 149px;
       left: 50px;
-      bottom: 617px;
+      bottom: 517px;
     }
   }
 
@@ -144,7 +144,7 @@ export const Container = styled.div`
       width: 550px;
       //height: 149px;
       left: -10px;
-      bottom: 633px;
+      bottom: 517px;
     }
   }
 
