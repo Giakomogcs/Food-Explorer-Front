@@ -6,6 +6,12 @@ export const AuthContext = createContext({})
 function AuthProvider({children}){
   const [data, setData] = useState({})
 
+  function signOut(){
+    localStorage.removeItem("@food-explorer:user")
+    localStorage.removeItem("@food-explorer:token")
+
+    setData({})
+  }
 
   async function signIn({email, password}){
     try {
@@ -42,7 +48,12 @@ function AuthProvider({children}){
   }, [])
 
   return(
-    <AuthContext.Provider value={{signIn, user: data.user}}>
+    <AuthContext.Provider value={{
+      signIn, 
+      signOut,
+      user: data.user
+      }}
+      >
       {children}
     </AuthContext.Provider>
   )

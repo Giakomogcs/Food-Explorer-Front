@@ -2,6 +2,7 @@ import { Container, Menu, Logo, Content  } from "./styles";
 
 import {Input} from "../../components/SearchBar"
 import { Button } from "../../components/Button"
+import { useAuth } from "../../hooks/auth";
 
 import {Link} from 'react-router-dom'
 
@@ -9,6 +10,9 @@ import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 
 export function HeaderAdmin(){
+
+  const {signOut} = useAuth()
+
   return(
     <Container>
       <Content>
@@ -43,7 +47,7 @@ export function HeaderAdmin(){
             <Button title="Novo prato" />
           </Link>
 
-          <RxExit/>
+          <RxExit onClick = {signOut}/>
         </div>
 
       </Content>

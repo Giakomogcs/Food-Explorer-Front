@@ -1,6 +1,7 @@
 import { Container, Menu, Logo, Receipt, Content  } from "./styles";
 
 import {Input} from "../../components/SearchBar"
+import { useAuth } from "../../hooks/auth";
 
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
@@ -8,6 +9,8 @@ import {FiSearch} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 
 export function HeaderUser(){
+  const {signOut} = useAuth()
+  
   return(
     <Container>
       <Content className="Content">
@@ -42,7 +45,7 @@ export function HeaderUser(){
           </div>
         </Receipt>
 
-        <RxExit/>
+        <RxExit onClick = {signOut}/>
       </Content>
 
     </Container>

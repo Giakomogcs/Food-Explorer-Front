@@ -9,16 +9,18 @@ import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagsAdmin} from "../../components/TagsAdmin"
 
+import {Link} from 'react-router-dom'
+
 export function NewPrato(){
   return(
     <Container>
       <HeaderAdmin/>
 
       <Content>
-        <button className="Voltar">
+        <Link to={-1} className="Voltar">
           <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
           voltar
-        </button>
+        </Link>
 
         <h1>Novo prato</h1>
 
