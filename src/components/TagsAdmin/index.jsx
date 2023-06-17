@@ -6,6 +6,7 @@ export function TagsAdmin({isNew, value, onClick, ...rest}){
   return(
     <Container isNew={isNew}>
       <input
+        className="ingredientes"
         type="text"
         value={value}
         readOnly={!isNew}

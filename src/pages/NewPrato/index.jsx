@@ -10,8 +10,22 @@ import { Footer } from "../../components/Footer"
 import {TagsAdmin} from "../../components/TagsAdmin"
 
 import {Link} from 'react-router-dom'
+import { useState } from "react"
 
 export function NewPrato(){
+  const[ingredientes, setIngredientes] = useState([])
+  const[newIngrediente, setNewIngrediente] = useState("")
+
+  function handleAddIgrediente(){
+    setIngredientes(prevState => [...prevState, newIngrediente])
+    setNewIngrediente("")
+  }
+
+  function handleRemoveIgrediente(deleted){
+    setIngredientes(prevState => prevState.filter(ingrediente => ingrediente !== deleted))
+  }
+
+
   return(
     <Container>
       <HeaderAdmin/>
@@ -61,10 +75,25 @@ export function NewPrato(){
         </div>
 
         <div className="Segundo">
-          <Session title={"Igredientes"}>
-            <div className="tags">
-              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
-              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" isNew/>
+          <Session title={"Ingredientes"}>
+            <div className="ingredientesList">
+              {
+                ingredientes.map((ingrediente, index) => (
+                  <TagsAdmin 
+                    key={String(index)}
+                    value={ingrediente}
+                    onClick={()=> {handleRemoveIgrediente(ingrediente)}}
+                  />
+                ))
+              }
+              
+              <TagsAdmin 
+                placeholder="Adicionar" 
+                value={newIngrediente}
+                onChange={e => setNewIngrediente(e.target.value)}
+                onClick={handleAddIgrediente}
+                isNew
+              />
             </div>
           </Session>
 

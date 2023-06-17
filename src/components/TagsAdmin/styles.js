@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 32px;
+  width: auto;
 
   font-family: 'Roboto';
   font-style: normal;
@@ -32,14 +33,16 @@ export const Container = styled.div`
     }
   }
 
-  >input{
+  >.ingredientes{
     width: auto;
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     border: none;
     background: none;
+    background-color: transparent;
 
     color: ${({ theme, isNew}) => isNew ? theme.COLORS.LIGHT_500 : theme.COLORS.LIGHT_100};
 

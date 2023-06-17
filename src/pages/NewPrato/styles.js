@@ -64,7 +64,7 @@ export const Content = styled.div`
 
   div{
     
-    .tags{
+    .ingredientesList{
       width: 100%;
       height: auto;
 
@@ -75,7 +75,6 @@ export const Content = styled.div`
       flex-wrap: wrap;
       gap: 16px;
       border-radius: 8px;
-
       background-color: ${({theme}) => theme.COLORS.DARK_800};
     }
 
