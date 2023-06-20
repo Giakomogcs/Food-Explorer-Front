@@ -15,6 +15,7 @@ import { api } from "../../services/api"
 import { useNavigate } from "react-router-dom"
 
 export function NewPrato(){
+
   const[name, setName] = useState("")
   const[category, setCategory] = useState("")
   const[price, setPrice] = useState("")
@@ -27,8 +28,7 @@ export function NewPrato(){
 
   function handleAddIgrediente(){
     if (newIngrediente.length == 0){
-      alert("O Campo de ingrediente não pode estar vazio.")
-      return
+      return alert("O Campo de ingrediente não pode estar vazio.")
     }
     setIngredientes(prevState => [...prevState, newIngrediente])
     setNewIngrediente("")
@@ -39,6 +39,14 @@ export function NewPrato(){
   }
 
   async function handleNewPrato() {
+    if(!name || !category || !price || !description){
+      return alert("Preencha todos os campos.")
+    }
+
+    if(newIngrediente){
+      return alert("O campo de igredientes tem conteúdo a ser adicionado. Clique em adicionar ou esvazie o campo")
+    }
+
     await api.post("/pratos", {
       name,
       category,
@@ -93,9 +101,9 @@ export function NewPrato(){
 
             <select onChange={e => setCategory(e.target.value)}>
               <option value="Refeição">Refeição</option>
-              <option value="Refeição">Pratos principais</option>
-              <option value="Refeição">Sobremesas</option>
-              <option value="Refeição">Bebidas</option>
+              <option value="Pratos principais">Pratos principais</option>
+              <option value="Sobremesas">Sobremesas</option>
+              <option value="Bebidas">Bebidas</option>
             </select>
           </label>
 
