@@ -11,18 +11,44 @@ import {TagsAdmin} from "../../components/TagsAdmin"
 
 import {Link} from 'react-router-dom'
 import { useState } from "react"
+import { api } from "../../services/api"
+import { useNavigate } from "react-router-dom"
 
 export function NewPrato(){
-  const[ingredientes, setIngredientes] = useState([])
+  const[name, setName] = useState("")
+  const[category, setCategory] = useState("")
+  const[price, setPrice] = useState("")
+  const[description, setDescription] = useState("")
+
+  const[Ingredients, setIngredientes] = useState([])
   const[newIngrediente, setNewIngrediente] = useState("")
 
+  const navigate = useNavigate()
+
   function handleAddIgrediente(){
+    if (newIngrediente.length == 0){
+      alert("O Campo de ingrediente não pode estar vazio.")
+      return
+    }
     setIngredientes(prevState => [...prevState, newIngrediente])
     setNewIngrediente("")
   }
 
   function handleRemoveIgrediente(deleted){
     setIngredientes(prevState => prevState.filter(ingrediente => ingrediente !== deleted))
+  }
+
+  async function handleNewPrato() {
+    await api.post("/pratos", {
+      name,
+      category,
+      price,
+      description,
+      Ingredients
+    })
+
+    alert("Prato criado com sucesso!")
+    navigate("/")
   }
 
 
@@ -58,13 +84,14 @@ export function NewPrato(){
               placeholder="Exemplo: Salada Ceasar"
               type="text"
               id="Nome"
+              onChange={e => setName(e.target.value)}
             />
           </label>
 
           <label htmlFor="Categoria" className="Categoria">
             <p>Categoria</p>
 
-            <select>
+            <select onChange={e => setCategory(e.target.value)}>
               <option value="Refeição">Refeição</option>
               <option value="Refeição">Pratos principais</option>
               <option value="Refeição">Sobremesas</option>
@@ -78,7 +105,7 @@ export function NewPrato(){
           <Session title={"Ingredientes"}>
             <div className="ingredientesList">
               {
-                ingredientes.map((ingrediente, index) => (
+                Ingredients.map((ingrediente, index) => (
                   <TagsAdmin 
                     key={String(index)}
                     value={ingrediente}
@@ -102,6 +129,7 @@ export function NewPrato(){
             <input
               placeholder="R$ 00,00"
               type="text"
+              onChange={e => setPrice(e.target.value)}
             />
           </label>
         </div>
@@ -113,11 +141,16 @@ export function NewPrato(){
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
               type="text"
               id="Description"
+              onChange={e => setDescription(e.target.value)}
             />
           </label>
         </div>
 
-        <Button className="SaveButton" title="Salvar Alterações" />
+        <Button 
+          className="SaveButton" 
+          title="Salvar Alterações" 
+          onClick={handleNewPrato}
+        />
 
       </Content>
       
