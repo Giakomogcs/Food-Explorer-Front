@@ -175,7 +175,8 @@ export const Content = styled.div`
 
       >select{
         background-color: ${({theme}) => theme.COLORS.DARK_900};
-        padding: auto;
+        padding: 10px;
+        border-color:transparent;
         
         &:placeholder{
           //margin-left: 16px;
@@ -184,6 +185,7 @@ export const Content = styled.div`
         
         >option{
           border: 0;
+          border-color:transparent;
           background-color: ${({theme}) => theme.COLORS.DARK_800};
         }
       }
@@ -248,6 +250,7 @@ export const Content = styled.div`
       }
       >.Categoria{
         min-width: 250px;
+        padding: auto;
       }
 
       .Description{

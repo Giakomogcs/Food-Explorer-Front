@@ -8,9 +8,12 @@ import {Link} from 'react-router-dom'
 
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
+import { useState } from "react";
+
 
 export function HeaderAdmin(){
-
+  const [searchAdmin, setSearch] = useState("")
+  
   const {signOut} = useAuth()
 
   return(
@@ -39,6 +42,7 @@ export function HeaderAdmin(){
           <Input
             placeholder = "Busque por pratos ou ingredientes" 
             icon={FiSearch}
+            onChange ={(e) => setSearch(e.target.value)}
           />
         </div>
 
@@ -54,4 +58,8 @@ export function HeaderAdmin(){
 
     </Container>
   )
+  
 }
+
+
+

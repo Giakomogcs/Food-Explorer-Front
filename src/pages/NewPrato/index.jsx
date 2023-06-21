@@ -39,7 +39,7 @@ export function NewPrato(){
   }
 
   async function handleNewPrato() {
-    if(!name || !category || !price || !description){
+    if(!name || category == "" || !price || !description){
       return alert("Preencha todos os campos.")
     }
 
@@ -100,6 +100,7 @@ export function NewPrato(){
             <p>Categoria</p>
 
             <select onChange={e => setCategory(e.target.value)}>
+              <option value=""></option>
               <option value="Refeição">Refeição</option>
               <option value="Pratos principais">Pratos principais</option>
               <option value="Sobremesas">Sobremesas</option>
