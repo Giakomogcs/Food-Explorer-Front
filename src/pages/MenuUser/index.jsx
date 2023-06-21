@@ -8,7 +8,12 @@ import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {Input} from "../../components/SearchBar"
 
+import { useAuth } from "../../hooks/auth";
+import {Link} from 'react-router-dom'
+
 export function MenuUser(){
+  const {signOut} = useAuth()
+  
   return(
     <Container>
       <HeaderMenu/>
@@ -20,7 +25,9 @@ export function MenuUser(){
           icon={FiSearch}
         />
 
+        <Link to="/" onClick = {signOut}>
           <Session title="Sair"/>
+        </Link>
       </form>
 
       <Footer/>

@@ -51,7 +51,9 @@ export function HeaderAdmin(){
             <Button title="Novo prato" />
           </Link>
 
-          <RxExit onClick = {signOut}/>
+          <Link to="/" className="signOut">
+            <RxExit onClick = {signOut}/>
+          </Link>
         </div>
 
       </Content>

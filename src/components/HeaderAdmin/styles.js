@@ -83,7 +83,8 @@ export const Content = styled.div`
         height: 48px;
       }
 
-      >svg{
+      svg{
+        color: ${({theme}) => theme.COLORS.LIGHT_100};
         font-size: 22px;
       }
     }
