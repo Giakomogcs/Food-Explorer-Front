@@ -10,8 +10,51 @@ import { Footer } from "../../components/Footer"
 import {TagsAdmin} from "../../components/TagsAdmin"
 
 import {Link} from 'react-router-dom'
+import { useAuth } from "../../hooks/auth"
+import { api } from "../../services/api"
+import { useEffect, useState } from "react"
 
 export function EditPrato(){
+  const params = useParams()
+  console.log(params.prato_id)
+
+  const {updateProfile} = useAuth()
+
+  const[oldPrato, setPrato] = useState({})
+  const[name, setName] = useState(oldPrato.name)
+  const[category, setCategory] = useState(oldPrato.category)
+  const[price, setPrice] = useState(oldPrato.price)
+  const[description, setDescription] = useState(oldPrato.description)
+
+  const[Ingredients, setIngredientes] = useState(oldPrato.Ingredients)
+  const[newIngrediente, setNewIngrediente] = useState("")
+
+  async function handleUpdate(){
+
+    const prato = {
+      name,
+      category,
+      price,
+      description,
+      Ingredients
+    
+    }
+    updateProfile({prato})
+  }
+
+  useEffect(() => {
+    async function searchPrato(){
+
+      const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
+      console.log(response)
+      setPrato(response)
+    }
+
+    console.log(" aquiii ")
+    searchPrato()
+
+  },[])
+
   return(
     <Container>
       <HeaderAdmin/>
@@ -44,6 +87,7 @@ export function EditPrato(){
               placeholder="Exemplo: Salada Ceasar"
               type="text"
               id="Nome"
+              value={name}
             />
           </label>
 
@@ -90,7 +134,7 @@ export function EditPrato(){
 
         <div className="Buttons">
           <Button className="DeleteButton" title="Excluir prato" />
-          <Button className="SaveButton" title="Salvar Alterações" />
+          <Button className="SaveButton" title="Salvar Alterações" onClick={handleUpdate}/>
         </div>
 
       </Content>

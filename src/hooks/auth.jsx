@@ -34,6 +34,23 @@ function AuthProvider({children}){
     }
   }
 
+  async function updateProfile({prato}, id){
+    
+    try {
+      await api.put(`/pratos/${id}`, prato)
+      //const response = await api.get(`http://localhost:3333/pratos?name`)
+      alert("Prato atualizado!")
+
+    } catch (error) {
+      if(error.response){
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível atualizar prato")
+      }
+    }
+
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@food-explorer:user")
     const token = localStorage.getItem("@food-explorer:token")
@@ -52,6 +69,8 @@ function AuthProvider({children}){
     <AuthContext.Provider value={{
       signIn, 
       signOut,
+      updateProfile,
+      
       user: data.user
       }}
       >
