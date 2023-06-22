@@ -18,7 +18,7 @@ export function EditPrato(){
 
       <Content>
         <Link to="/" className="Voltar">
-          <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
+          <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
           voltar
         </Link>
 
@@ -61,10 +61,10 @@ export function EditPrato(){
         </div>
 
         <div className="Segundo">
-          <Session title={"Igredientes"}>
+          <Session title={"Ingredientes"}>
             <div className="tags">
-              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
-              <TagsAdmin className="igredientes" placeholder="Adicionar" title="Igredientes" isNew/>
+              <TagsAdmin className="ingredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
+              <TagsAdmin className="ingredientes" placeholder="Adicionar" title="Igredientes" isNew/>
             </div>
           </Session>
 

@@ -3,42 +3,58 @@ import { Container, Picture, Include} from "./styles";
 import {Button} from "../../components/Button"
 import {FiMinus,FiPlus} from 'react-icons/fi'
 
-import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 
-export function Prato({title, description, price, icon: Icon}){
+export function Prato({title, description, price, icon: Icon, id}){
+
+  const navigate = useNavigate()
+
+  function handleDetails(id){
+    navigate(`/details/${id}`)
+  }
+
+  function handleEdit(id){
+    navigate(`/edit/${id}`)
+  }
+
   return(
     <Container>
-      {Icon && <Icon size={24}/>}
+      <div className="Icon" onClick={() => handleEdit(id)}>
+        {Icon && <Icon size={24}/>}
+      </div>
 
-      <Picture>
-        <img 
-          src="https://github.com/giakomogcs.png" 
-          alt="Foto do Prato" 
-        />
-      </Picture>
+      <div className="body" onClick={() => handleDetails(id)}>
+        <Picture>
+          <img 
+            src="https://github.com/giakomogcs.png" 
+            alt="Foto do Prato" 
+          />
+        </Picture>
 
-      <p className="title">
-        {title}
-      </p>
+        <p className="title">
+          {title}
+        </p>
 
-      <p className="description">
-        {description}
-      </p>
+        <p className="description">
+          {description}
+        </p>
 
-      <p className="price">
-        {price}
-      </p>
+        <p className="price">
+          {price}
+        </p>
 
-      <Include>
-        <div>
-          <FiMinus/>
-          <label>01</label>
-          <FiPlus/>
-        </div>
+        <Include>
+          <div>
+            <FiMinus/>
+            <label>01</label>
+            <FiPlus/>
+          </div>
 
-        <Button title="Incluir"/>
-      </Include>
+          <Button title="Incluir"/>
+        </Include>
+      </div>
+
 
     </Container>
   )

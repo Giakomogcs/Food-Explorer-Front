@@ -2,94 +2,98 @@ import styled from "styled-components";
 import {Link} from 'react-router-dom'
 
 export const Container = styled.li`
+  .Icon {
+    position: absolute;
 
+    >svg{
+      width: 21px;
+      color: ${({theme}) => theme.COLORS.LIGHT_300};
+      position: relative;
+      left: 170px;
+      top: 16px;
 
-  min-width: 210px;
-  min-height: 292px;
-
-  display: flex;
-  align-items: center;
-  justify-content: initial;
-  flex-direction: column;
-  gap: 15px;
-  
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  background-color: ${({theme}) => theme.COLORS.DARK_300};
-  color: ${({theme}) => theme.COLORS.LIGHT_300};
-
-  >.title{
-    font-size: 14px;
-    line-height: 24px;
-    text-align: center;
-
+      cursor: pointer;
+    }
   }
 
-  .description{
-    display: none;
-  }
+  .body{
+    min-width: 210px;
+    min-height: 292px;
 
-  >.price{
-    font-size: 16px;
-    line-height: 16px;
-    text-align: center;
-    font-weight: 400;
-
-    color: ${({theme}) => theme.COLORS.CAKE_200};
-  }
-
-  
-  >svg{
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    flex-direction: column;
+    gap: 15px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    background-color: ${({theme}) => theme.COLORS.DARK_300};
     color: ${({theme}) => theme.COLORS.LIGHT_300};
-    position: relative;
-    font-size: 24px;
-    left: 80px;
-    top: 16px;
 
-    cursor: pointer;
-  }
-  
+    >.title{
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
 
-  @media all and (min-width: 768px) {
-    min-width: 330px;
-    min-height: 460px;
-
-    .title{
-      font-size: 24px;
-      line-height: 140%;
     }
 
     .description{
-      display: flex;
-      max-width: 330px;
+      display: none;
+    }
 
-      font-family: 'Roboto';
-      font-style: normal;
+    >.price{
+      font-size: 16px;
+      line-height: 16px;
+      text-align: center;
       font-weight: 400;
-      font-size: 14px;
-      line-height: 160%;
-      color: ${({theme}) => theme.COLORS.LIGHT_400};
 
-      padding: 0 24px;
+      color: ${({theme}) => theme.COLORS.CAKE_200};
+    }
+  }
 
+  @media all and (min-width: 768px) {
+    .Icon{
+      >svg{
+
+        width: 24px;
+        position: relative;
+        left: 280px;
+        top: 22px;
+        cursor: pointer;
+      }
     }
 
-    .price{
-      font-size: 24px;
-      line-height: 140%;
-    }
+    .body{
+      min-width: 330px;
+      min-height: 460px;
 
-    
-    >svg{
-      position: relative;
-      font-size: 24px;
-      left: 130px;
-      top: 16px;
-      cursor: pointer;
-    }
-  
+      .title{
+        font-size: 24px;
+        line-height: 140%;
+      }
 
+      .description{
+        display: flex;
+        max-width: 330px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        color: ${({theme}) => theme.COLORS.LIGHT_400};
+
+        padding: 0 24px;
+      }
+
+      .price{
+        font-size: 24px;
+        line-height: 140%;
+      }
+
+    }
   }
 
 `;
@@ -101,14 +105,20 @@ export const Picture = styled.div`
     width: 88px;
     border-radius: 50%;
     cursor: pointer;
+
+    margin-top: 25px;
   }
+
+  
 
   @media all and (min-width: 768px) {
     >img{
       height: 176px;
       width: 176px;
       border-radius: 50%;
-  }
+
+      margin-top: 40px;
+    }
   }
 
 `;
@@ -152,5 +162,6 @@ export const Include = styled.div`
     display: flex;
     flex-direction: row;
     gap: 16px;
+
   }
 `;

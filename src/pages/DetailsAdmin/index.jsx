@@ -17,9 +17,9 @@ export function DetailsAdmin(){
 
       <Content>
 
-        <Link to="/" className="Voltar">
-          <button >
-            <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
+        <Link to="/" >
+          <button className="Voltar">
+            <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
             voltar
           </button>
         </Link>

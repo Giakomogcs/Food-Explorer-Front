@@ -57,7 +57,25 @@ export const Content = styled.div`
   }
 
   .Voltar{
-    margin-bottom: 16px;
+    display: flex;
+    height: 23px;
+    width: auto;
+    align-items: center;
+    justify-content: start;
+    
+  
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    
+    
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
+  
+    border: none;
+    margin-bottom: 35px;
+    background-color: transparent;
 
     >.Smaller{
       height: 22px;

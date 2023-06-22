@@ -8,6 +8,7 @@ import {Prato} from "../../components/Prato"
 import { Footer } from "../../components/Footer"
 
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import {BsPencil} from 'react-icons/bs'
 
 export function HomeAdmin(){
@@ -22,6 +23,12 @@ export function HomeAdmin(){
   const PratosPrincipaisStorage = localStorage.getItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
   const SobremesaStorage = localStorage.getItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
   const BebidaStorage = localStorage.getItem("@food-explorer:bebidas", JSON.stringify(bebidas))
+
+  const navigate = useNavigate()
+
+  function handleDetails(id){
+    navigate(`/details/${id}`)
+  }
 
   async function fetchPratos() {
     const response = await api.get(`http://localhost:3333/pratos?name`)
@@ -77,10 +84,12 @@ export function HomeAdmin(){
                 
                 <Prato 
                   key={String(prato.id)}
+                  id={prato.id}
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (parseFloat(prato.price)).toFixed(2)} 
-                  icon={BsPencil}/>
+                  icon={BsPencil}
+                />
               ))
             }
 
@@ -94,6 +103,7 @@ export function HomeAdmin(){
                 
                 <Prato 
                   key={String(prato.id)}
+                  id={prato.id}
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (parseFloat(prato.price)).toFixed(2)} 
@@ -111,6 +121,7 @@ export function HomeAdmin(){
                 
                 <Prato 
                   key={String(prato.id)}
+                  id={prato.id}
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (parseFloat(prato.price)).toFixed(2)} 
@@ -128,6 +139,7 @@ export function HomeAdmin(){
                 
                 <Prato 
                   key={String(prato.id)}
+                  id={prato.id}
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (parseFloat(prato.price)).toFixed(2)} 

@@ -24,6 +24,9 @@ export function NewPrato(){
   const[Ingredients, setIngredientes] = useState([])
   const[newIngrediente, setNewIngrediente] = useState("")
 
+  const [picture, setPicture] = useState(null)
+  const [pictureFile, setPictureFile] = useState(null)
+
   const navigate = useNavigate()
 
   function handleAddIgrediente(){
@@ -59,6 +62,16 @@ export function NewPrato(){
     navigate("/")
   }
 
+  function handleChangePicture(event) {
+    const file = event.target.files[0]
+    setPictureFile(file)
+
+    const imagePreview = URL.createObjectURL(file)
+    setPicture(imagePreview)
+
+
+  }
+
 
   return(
     <Container>
@@ -66,7 +79,7 @@ export function NewPrato(){
 
       <Content>
         <Link to={-1} className="Voltar">
-          <img className="Smaller" src="images\smaller.svg" alt="icone de voltar página"/>
+          <img className="Smaller" src="images/smaller.svg" alt="icone de voltar página"/>
           voltar
         </Link>
 
@@ -82,6 +95,7 @@ export function NewPrato(){
               <input
                 type="file"
                 id="picture"
+                onChange={handleChangePicture}
               />
             </label>
           </Picture>
