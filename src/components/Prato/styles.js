@@ -3,14 +3,16 @@ import {Link} from 'react-router-dom'
 
 export const Container = styled.li`
   .Icon {
-    position: absolute;
+    position: relative;
+    width: 25px;
+    height: 25px;
 
     >svg{
       width: 21px;
       color: ${({theme}) => theme.COLORS.LIGHT_300};
       position: relative;
       left: 170px;
-      top: 16px;
+      top: 35px;
 
       cursor: pointer;
     }
@@ -60,7 +62,7 @@ export const Container = styled.li`
         width: 24px;
         position: relative;
         left: 280px;
-        top: 22px;
+        top: 40px;
         cursor: pointer;
       }
     }
