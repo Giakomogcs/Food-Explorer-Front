@@ -13,11 +13,13 @@ export const Container = styled.div`
   border-radius: 3px;
 
   
-  >div{
+  >.text{
+    margin: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0 0 190px;
+    
+    //padding: 0 0 0 190px;
     
     font-family: 'Poppins';
     color: ${({theme}) => theme.COLORS.LIGHT_300};
@@ -37,44 +39,50 @@ export const Container = styled.div`
     }
   }
   
-  >img{
-    border: none;
-    position: absolute;
-    z-index: 1;
-    width: auto;
-    height: 150px;
-    //width: 191px;
-    //height: 149px;
-    left: -10px;
-    bottom: 615px;
+  .img{
+    width:30%;
+    >img{
+      border: none;
+      position: relative;
+      z-index: 1;
+      width: auto;
+      height: 150px;
+      //width: 191px;
+      //height: 149px;
+      left: -50px;
+      bottom: 30px;
+    }
   }
 
   @media all and (min-width: 570px) {
-    >div{
-      padding: 0 0 0 270px;
+
+    .img{
+      width: 45%;
+      >img{
+        border: none;
+        z-index: 1;
+        width: auto;
+        height: 160px;
+        //width: 191px;
+        //height: 149px;
+        left: -20px;
+        bottom: 40px;
+      }
     }
 
-    >img{
-      border: none;
-      position: absolute;
-      z-index: 1;
-      width: auto;
-      height: 160px;
-      //width: 191px;
-      //height: 149px;
-      left: 30px;
-      bottom: 615px;
+    .text{
+      margin:0;
     }
 
   }
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 900px) {
     height: 180px;
     display: flex;
     justify-content: center;
     padding: 0 0 0 20px;
 
-    >div{
+    >.text{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -95,26 +103,28 @@ export const Container = styled.div`
       }
     }
     
+   .img{
+    width: 40%;
     >img{
       border: none;
-      position: absolute;
+      position: relative;
       z-index: 1;
-      width: auto;
+      
       height: 300px;
       width: 350px;
-      //height: 149px;
-      left: 50px;
-      bottom: 517px;
+
+      left: -50px;
+      bottom: 80px;
     }
+   }
   }
 
   @media all and (min-width: 1140px) {
     height: 220px;
     display: flex;
     justify-content: center;
-    padding: 0 0 0 50px;
 
-    >div{
+    >.text{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -135,16 +145,18 @@ export const Container = styled.div`
       }
     }
     
-    >img{
-      border: none;
-      position: absolute;
-      z-index: 1;
-      width: auto;
-      height: 300px;
-      width: 550px;
-      //height: 149px;
-      left: -10px;
-      bottom: 517px;
+    .img{
+      >img{
+        border: none;
+        position: relative;
+        z-index: 1;
+        width: auto;
+        height: 300px;
+        width: 550px;
+        //height: 149px;
+        left: -90px;
+        bottom: 80px;
+      }
     }
   }
 
