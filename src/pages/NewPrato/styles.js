@@ -67,6 +67,7 @@ export const Content = styled.div`
     .ingredientesList{
       width: 100%;
       height: auto;
+      margin-bottom: 10px;
 
       padding: 5px 8px;
 

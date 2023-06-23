@@ -64,9 +64,10 @@ export const Content = styled.div`
 
   div{
     
-    .tags{
+    .ingredientesList{
       width: 100%;
       height: auto;
+      margin-bottom: 10px;
 
       padding: 5px 8px;
 
@@ -176,7 +177,7 @@ export const Content = styled.div`
 
       >select{
         background-color: ${({theme}) => theme.COLORS.DARK_900};
-        padding: auto;
+        padding: 10px;
         
         &:placeholder{
           //margin-left: 16px;

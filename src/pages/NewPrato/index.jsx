@@ -29,7 +29,7 @@ export function NewPrato(){
 
   const navigate = useNavigate()
 
-  function handleAddIgrediente(){
+  function handleAddIngrediente(){
     if (newIngrediente.length == 0){
       return alert("O Campo de ingrediente não pode estar vazio.")
     }
@@ -37,7 +37,7 @@ export function NewPrato(){
     setNewIngrediente("")
   }
 
-  function handleRemoveIgrediente(deleted){
+  function handleRemoveIngrediente(deleted){
     setIngredientes(prevState => prevState.filter(ingrediente => ingrediente !== deleted))
   }
 
@@ -132,7 +132,7 @@ export function NewPrato(){
                   <TagsAdmin 
                     key={String(index)}
                     value={ingrediente}
-                    onClick={()=> {handleRemoveIgrediente(ingrediente)}}
+                    onClick={()=> {handleRemoveIngrediente(ingrediente)}}
                   />
                 ))
               }
@@ -141,7 +141,7 @@ export function NewPrato(){
                 placeholder="Adicionar" 
                 value={newIngrediente}
                 onChange={e => setNewIngrediente(e.target.value)}
-                onClick={handleAddIgrediente}
+                onClick={handleAddIngrediente}
                 isNew
               />
             </div>

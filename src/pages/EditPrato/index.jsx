@@ -1,9 +1,8 @@
 import { Container, Content, Picture} from "./styles"
 
-import {FiMinus,FiPlus,FiUpload} from 'react-icons/fi'
+import {FiUpload} from 'react-icons/fi'
 
 import { Button } from "../../components/Button"
-import {Input} from "../../components/SearchBar"
 import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
@@ -11,24 +10,33 @@ import {TagsAdmin} from "../../components/TagsAdmin"
 
 import {Link} from 'react-router-dom'
 import { useAuth } from "../../hooks/auth"
+
 import { api } from "../../services/api"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { Include } from "../../components/Prato/styles"
 
 export function EditPrato(){
   const params = useParams()
-  console.log(params.prato_id)
-
   const {updateProfile} = useAuth()
 
   const[oldPrato, setPrato] = useState({})
-  const[name, setName] = useState(oldPrato.name)
-  const[category, setCategory] = useState(oldPrato.category)
-  const[price, setPrice] = useState(oldPrato.price)
-  const[description, setDescription] = useState(oldPrato.description)
 
-  const[Ingredients, setIngredientes] = useState(oldPrato.Ingredients)
+  const[name, setName] = useState("")
+  const[category, setCategory] = useState("")
+  const[price, setPrice] = useState("")
+  const[description, setDescription] = useState("")
+
+  const[Ingredients, setIngredientes] = useState([])
   const[newIngrediente, setNewIngrediente] = useState("")
+  
+  const [refeicao, setRefeicao] = useState([])
+  const [pratosPrincipais, setPratosPrincipais] = useState([])
+  const [sobremesas, setSobremesas] = useState([])
+  const [bebidas, setBebidas] = useState([])
 
+  const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
+  
   async function handleUpdate(){
 
     const prato = {
@@ -42,17 +50,48 @@ export function EditPrato(){
     updateProfile({prato})
   }
 
+  function handleAddIngrediente(){
+    if (newIngrediente.length == 0){
+      return alert("O Campo de ingrediente não pode estar vazio.")
+    }
+    setIngredientes(prevState => [...prevState, newIngrediente])
+    setNewIngrediente("")
+  }
+
+  function handleRemoveIngrediente(deleted){
+    setIngredientes(prevState => prevState.filter(ingrediente => ingrediente !== deleted))
+  }
+
+  function handleChangePicture(event) {
+    const file = event.target.files[0]
+    setPictureFile(file)
+
+    const imagePreview = URL.createObjectURL(file)
+    setPicture(imagePreview)
+  }
+
+  function catchIngredients(data){
+    
+    let hist = []
+    localStorage.setItem("@food-explorer:Edit", JSON.stringify(data))
+
+    data.Ingredients.map((ingrediente, index) => {
+      if(!hist.includes(ingrediente)){
+        setIngredientes(hist)
+      }
+      hist.push(ingrediente.name)
+      
+    })
+  }
+
   useEffect(() => {
     async function searchPrato(){
-
       const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
-      console.log(response)
-      setPrato(response)
+      setPrato(response.data)
+      catchIngredients(response.data)
     }
 
-    console.log(" aquiii ")
     searchPrato()
-
   },[])
 
   return(
@@ -60,7 +99,7 @@ export function EditPrato(){
       <HeaderAdmin/>
 
       <Content>
-        <Link to="/" className="Voltar">
+        <Link to={-1} className="Voltar">
           <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
           voltar
         </Link>
@@ -77,6 +116,7 @@ export function EditPrato(){
               <input
                 type="file"
                 id="picture"
+                onChange={handleChangePicture}
               />
             </label>
           </Picture>
@@ -84,39 +124,55 @@ export function EditPrato(){
           <label htmlFor="Nome" className="Nome">
             <p>Nome</p>
             <input
-              placeholder="Exemplo: Salada Ceasar"
               type="text"
               id="Nome"
-              value={name}
+              placeholder={PratoStorage.name}
+              onChange={e => setName(e.target.value)}
             />
           </label>
 
           <label htmlFor="Categoria" className="Categoria">
             <p>Categoria</p>
 
-            <select>
+            <select onChange={e => setCategory(e.target.value)}>
+              <option value="">{PratoStorage.category}</option>
               <option value="Refeição">Refeição</option>
-              <option value="Refeição">Pratos principais</option>
-              <option value="Refeição">Sobremesas</option>
-              <option value="Refeição">Bebidas</option>
+              <option value="Pratos principais">Pratos principais</option>
+              <option value="Sobremesas">Sobremesas</option>
+              <option value="Bebidas">Bebidas</option>
             </select>
           </label>
 
         </div>
 
         <div className="Segundo">
-          <Session title={"Ingredientes"}>
-            <div className="tags">
-              <TagsAdmin className="ingredientes" placeholder="Adicionar" title="Igredientes" value="Giovani"/>
-              <TagsAdmin className="ingredientes" placeholder="Adicionar" title="Igredientes" isNew/>
+        <Session title={"Ingredientes"}>
+            <div className="ingredientesList">
+              {
+                Ingredients.map((ingrediente, index) => (
+                  <TagsAdmin 
+                    key={String(index)}
+                    value={ingrediente}
+                    onClick={()=> {handleRemoveIngrediente(ingrediente)}}
+                  />
+                ))
+              }
+              
+              <TagsAdmin 
+                placeholder="Adicionar" 
+                value={newIngrediente}
+                onChange={e => setNewIngrediente(e.target.value)}
+                onClick={handleAddIngrediente}
+                isNew
+              />
             </div>
           </Session>
 
           <label htmlFor="Price">
             <p id="Price">Preço</p>
             <input
-              placeholder="R$ 00,00"
               type="text"
+              placeholder={`R$ ${PratoStorage.price}`}
             />
           </label>
         </div>
@@ -125,7 +181,7 @@ export function EditPrato(){
           <label htmlFor="Description" className="Description">
             <p>Descrição</p>
             <textarea 
-              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              placeholder={PratoStorage.description}
               type="text"
               id="Description"
             />
