@@ -31,6 +31,8 @@ export function EditPrato(){
   const[newIngrediente, setNewIngrediente] = useState("")
   
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
+
+  //window.location.reload();
   
   async function handleUpdate(){
     
@@ -75,7 +77,6 @@ export function EditPrato(){
         setIngredientes(hist)
       }
       hist.push(ingrediente.name)
-      
     })
   }
   
@@ -86,14 +87,18 @@ export function EditPrato(){
       catchIngredients(response.data)
 
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
-      setName(PratoStorage.name)
-      setCategory(PratoStorage.category)
-      setPrice(PratoStorage.price)
-      setDescription(PratoStorage.description)
+      
     }
     
     searchPrato()
   },[])
+
+  useEffect(() => {
+    setName(PratoStorage.name)
+    setCategory(PratoStorage.category)
+    setPrice(PratoStorage.price)
+    setDescription(PratoStorage.description)
+  }, [PratoStorage])
   
   return(
     <Container>
