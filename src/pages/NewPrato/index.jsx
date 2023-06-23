@@ -152,7 +152,14 @@ export function NewPrato(){
             <input
               placeholder="R$ 00,00"
               type="text"
-              onChange={e => setPrice(e.target.value)}
+              onChange={e => {
+                if(!isNaN(e.target.value)){
+                  setPrice(e.target.value)
+                } else{
+                  alert("siga o exemplo a seguir: 21.12")
+                  e.target.value = ""
+                }
+              }}
             />
           </label>
         </div>

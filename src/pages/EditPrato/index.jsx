@@ -19,37 +19,33 @@ import { Include } from "../../components/Prato/styles"
 export function EditPrato(){
   const params = useParams()
   const {updateProfile} = useAuth()
-
+  
   const[oldPrato, setPrato] = useState({})
-
+  
   const[name, setName] = useState("")
   const[category, setCategory] = useState("")
   const[price, setPrice] = useState("")
   const[description, setDescription] = useState("")
-
+  
   const[Ingredients, setIngredientes] = useState([])
   const[newIngrediente, setNewIngrediente] = useState("")
   
-  const [refeicao, setRefeicao] = useState([])
-  const [pratosPrincipais, setPratosPrincipais] = useState([])
-  const [sobremesas, setSobremesas] = useState([])
-  const [bebidas, setBebidas] = useState([])
-
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
   
   async function handleUpdate(){
-
+    
     const prato = {
       name,
       category,
       price,
       description,
       Ingredients
-    
+      
     }
-    updateProfile({prato})
+    console.log(prato)
+    //updateProfile({prato})
   }
-
+  
   function handleAddIngrediente(){
     if (newIngrediente.length == 0){
       return alert("O Campo de ingrediente não pode estar vazio.")
@@ -61,20 +57,19 @@ export function EditPrato(){
   function handleRemoveIngrediente(deleted){
     setIngredientes(prevState => prevState.filter(ingrediente => ingrediente !== deleted))
   }
-
+  
   function handleChangePicture(event) {
     const file = event.target.files[0]
     setPictureFile(file)
-
+    
     const imagePreview = URL.createObjectURL(file)
     setPicture(imagePreview)
   }
-
+  
   function catchIngredients(data){
     
     let hist = []
-    localStorage.setItem("@food-explorer:Edit", JSON.stringify(data))
-
+    
     data.Ingredients.map((ingrediente, index) => {
       if(!hist.includes(ingrediente)){
         setIngredientes(hist)
@@ -83,17 +78,23 @@ export function EditPrato(){
       
     })
   }
-
+  
   useEffect(() => {
     async function searchPrato(){
       const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
       setPrato(response.data)
       catchIngredients(response.data)
-    }
 
+      localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
+      setName(PratoStorage.name)
+      setCategory(PratoStorage.category)
+      setPrice(PratoStorage.price)
+      setDescription(PratoStorage.description)
+    }
+    
     searchPrato()
   },[])
-
+  
   return(
     <Container>
       <HeaderAdmin/>
@@ -126,7 +127,7 @@ export function EditPrato(){
             <input
               type="text"
               id="Nome"
-              placeholder={PratoStorage.name}
+              placeholder={name}
               onChange={e => setName(e.target.value)}
             />
           </label>
@@ -135,7 +136,7 @@ export function EditPrato(){
             <p>Categoria</p>
 
             <select onChange={e => setCategory(e.target.value)}>
-              <option value="">{PratoStorage.category}</option>
+              <option value="">{category}</option>
               <option value="Refeição">Refeição</option>
               <option value="Pratos principais">Pratos principais</option>
               <option value="Sobremesas">Sobremesas</option>
@@ -172,7 +173,19 @@ export function EditPrato(){
             <p id="Price">Preço</p>
             <input
               type="text"
-              placeholder={`R$ ${PratoStorage.price}`}
+              placeholder={`R$ ${price}`}
+              onChange={e => {
+                if(!isNaN(e.target.value)){
+                  if (e.target.value === ""){
+                    alert("preencha o campo de preço.")
+                  }else{
+                    setPrice(e.target.value)
+                  }
+                } else{
+                  alert("siga o exemplo a seguir: 21.12")
+                  e.target.value = ""
+                }
+              }}
             />
           </label>
         </div>
@@ -181,9 +194,10 @@ export function EditPrato(){
           <label htmlFor="Description" className="Description">
             <p>Descrição</p>
             <textarea 
-              placeholder={PratoStorage.description}
+              placeholder={description}
               type="text"
               id="Description"
+              onChange={e => setDescription(e.target.value)}
             />
           </label>
         </div>
