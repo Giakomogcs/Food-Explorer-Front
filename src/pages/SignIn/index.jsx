@@ -31,7 +31,7 @@ export function SignIn(){
           <p>E-mail</p>
           <Input
             placeholder="Exemplo: exemplo@exemplo.com.br"
-            type="text"
+            type="email"
             id="Email"
             onChange= {e => setEmail(e.target.value)}
           />

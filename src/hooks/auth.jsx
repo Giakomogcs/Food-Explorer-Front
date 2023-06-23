@@ -37,8 +37,9 @@ function AuthProvider({children}){
   async function updateProfile({prato}, id){
     
     try {
+      console.log(prato)
       await api.put(`/pratos/${id}`, prato)
-      //const response = await api.get(`http://localhost:3333/pratos?name`)
+      
       alert("Prato atualizado!")
 
     } catch (error) {

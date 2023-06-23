@@ -21,6 +21,14 @@ export function SignUp(){
       return alert("Preencha todos os campos!")
     }
 
+    if(!email.includes("@")){
+      return alert("E-mail inválido")
+    }
+
+    if(password.length<8){
+      return alert("Senha inválida")
+    }
+
     api.post("/users", {name, email, password})
     .then(()=> {
       alert("Usuário cadastrado com sucesso!")
@@ -62,7 +70,7 @@ export function SignUp(){
           <p>E-mail</p>
           <Input
             placeholder="Exemplo: exemplo@exemplo.com.br"
-            type="text"
+            type="email"
             id="Email"
             onChange={e => setEmail(e.target.value)}
           />

@@ -11,10 +11,12 @@ export function Prato({title, description, price, icon: Icon, id}){
   const navigate = useNavigate()
 
   function handleDetails(id){
+    
     navigate(`/details/${id}`)
   }
 
   function handleEdit(id){
+    
     navigate(`/edit/${id}`)
   }
 

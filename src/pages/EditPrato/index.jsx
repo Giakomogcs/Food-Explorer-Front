@@ -14,13 +14,14 @@ import { useAuth } from "../../hooks/auth"
 import { api } from "../../services/api"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { Include } from "../../components/Prato/styles"
+
+import { useNavigate } from "react-router-dom"
 
 export function EditPrato(){
+  
   const params = useParams()
   const {updateProfile} = useAuth()
-  
-  const[oldPrato, setPrato] = useState({})
+  const navigate = useNavigate()
   
   const[name, setName] = useState("")
   const[category, setCategory] = useState("")
@@ -42,10 +43,14 @@ export function EditPrato(){
       price,
       description,
       Ingredients
-      
     }
-    console.log(prato)
-    //updateProfile({prato})
+
+    console.log(name)
+    
+    updateProfile({prato},params.prato_id)
+    navigate("/")
+    
+    window.location.reload();
   }
   
   function handleAddIngrediente(){
@@ -83,7 +88,6 @@ export function EditPrato(){
   useEffect(() => {
     async function searchPrato(){
       const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
-      setPrato(response.data)
       catchIngredients(response.data)
 
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
@@ -98,7 +102,7 @@ export function EditPrato(){
     setCategory(PratoStorage.category)
     setPrice(PratoStorage.price)
     setDescription(PratoStorage.description)
-  }, [PratoStorage])
+  }, [PratoStorage.name])
   
   return(
     <Container>
@@ -133,7 +137,10 @@ export function EditPrato(){
               type="text"
               id="Nome"
               placeholder={name}
-              onChange={e => setName(e.target.value)}
+              onChange={e => {
+                setName(e.target.value)
+                console.log(name)
+              }}
             />
           </label>
 
