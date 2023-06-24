@@ -58,8 +58,21 @@ export function NewPrato(){
       Ingredients
     })
 
+    const response = await api.get(`http://localhost:3333/pratos?name=${name}`)
+    updatePicture(response.data)
+
     alert("Prato criado com sucesso!")
     navigate("/")
+  }
+
+  async function updatePicture(prato){
+    if(prato.picture){
+      const fileUploadForm = new FormData()
+      fileUploadForm.append("picture", prato.picture)
+
+      const response = await api.patch(`/users/pratos/picture${prato.id}`,fileUploadForm)
+      prato.picture = response.data.picture
+    }
   }
 
   function handleChangePicture(event) {
@@ -68,8 +81,6 @@ export function NewPrato(){
 
     const imagePreview = URL.createObjectURL(file)
     setPicture(imagePreview)
-
-
   }
 
 

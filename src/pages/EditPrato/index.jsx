@@ -30,6 +30,9 @@ export function EditPrato(){
   
   const[Ingredients, setIngredientes] = useState([])
   const[newIngrediente, setNewIngrediente] = useState("")
+
+  const [picture, setPicture] = useState(null)
+  const [pictureFile, setPictureFile] = useState(null)
   
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
 
@@ -42,15 +45,16 @@ export function EditPrato(){
       category,
       price,
       description,
-      Ingredients
+      Ingredients,
+      picture
     }
 
-    console.log(name)
+    console.log(PratoStorage.id)
     
-    updateProfile({prato},params.prato_id)
-    navigate("/")
+    updateProfile({prato},PratoStorage.id, pictureFile)
+    //navigate("/")
     
-    window.location.reload();
+    //window.location.reload();
   }
   
   function handleAddIngrediente(){
@@ -74,7 +78,6 @@ export function EditPrato(){
   }
   
   function catchIngredients(data){
-    
     let hist = []
     
     data.Ingredients.map((ingrediente, index) => {
@@ -102,6 +105,7 @@ export function EditPrato(){
     setCategory(PratoStorage.category)
     setPrice(PratoStorage.price)
     setDescription(PratoStorage.description)
+    setPicture(PratoStorage.picture)
   }, [PratoStorage.name])
   
   return(

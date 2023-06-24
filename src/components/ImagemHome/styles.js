@@ -125,6 +125,7 @@ export const Container = styled.div`
     justify-content: center;
 
     >.text{
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -146,6 +147,7 @@ export const Container = styled.div`
     }
     
     .img{
+      width: 40%;
       >img{
         border: none;
         position: relative;

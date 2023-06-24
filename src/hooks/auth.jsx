@@ -34,9 +34,18 @@ function AuthProvider({children}){
     }
   }
 
-  async function updateProfile({prato}, id){
+  async function updateProfile({prato},id ,picture){
     
     try {
+      console.log(picture)
+      if(picture){
+        const fileUploadForm = new FormData()
+        fileUploadForm.append("avatar", picture)
+
+        const response = await api.patch(`/pratos/picture/${id}`,fileUploadForm)
+        console.log(response)
+        prato.picture = response.data.picture
+      }
       console.log(prato)
       await api.put(`/pratos/${id}`, prato)
       
