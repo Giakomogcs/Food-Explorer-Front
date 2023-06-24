@@ -43,35 +43,57 @@ export function NewPrato(){
 
   async function handleNewPrato() {
     if(!name || category == "" || !price || !description){
-      return alert("Preencha todos os campos.")
-    }
-
+        return alert("Preencha todos os campos.")
+      }
+      
     if(newIngrediente){
       return alert("O campo de igredientes tem conteúdo a ser adicionado. Clique em adicionar ou esvazie o campo")
     }
+    
+    try{
+      
+      const prato_id = await api.post("/pratos", {
+        name,
+        category,
+        price,
+        description,
+        Ingredients
+      })
+      
+      updatePicture(prato_id.data.id)
 
-    await api.post("/pratos", {
-      name,
-      category,
-      price,
-      description,
-      Ingredients
-    })
+      await api.put(`/pratos/${prato_id.data.id}`, {Ingredients:Ingredients, picture:picture})
 
-    const response = await api.get(`http://localhost:3333/pratos?name=${name}`)
-    updatePicture(response.data)
+      alert("Prato criado com sucesso!")
 
-    alert("Prato criado com sucesso!")
+    }catch (error) {
+      if(error.response){
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível adicionar a imagem")
+      }
+    }
+
     navigate("/")
   }
+  
+  async function updatePicture(prato_id){
+    try {
+      if(pictureFile){
+        const fileUploadForm = new FormData()
+        fileUploadForm.append("avatar", pictureFile)
 
-  async function updatePicture(prato){
-    if(prato.picture){
-      const fileUploadForm = new FormData()
-      fileUploadForm.append("picture", prato.picture)
+        const response = await api.patch(`/pratos/picture/${prato_id}`,fileUploadForm)
+        setPicture(response.data.picture)
 
-      const response = await api.patch(`/users/pratos/picture${prato.id}`,fileUploadForm)
-      prato.picture = response.data.picture
+      }
+
+    } catch (error) {
+      if(error.response){
+        return alert(error.response.data.message)
+      } else {
+        return alert("Não foi possível adicionar a imagem")
+      }
     }
   }
 

@@ -48,12 +48,10 @@ export function EditPrato(){
       Ingredients,
       picture
     }
-
-    console.log(PratoStorage.id)
     
     updateProfile({prato},PratoStorage.id, pictureFile)
-    //navigate("/")
-    
+    navigate("/")
+    setTimeout(100)
     //window.location.reload();
   }
   
@@ -107,7 +105,7 @@ export function EditPrato(){
     setDescription(PratoStorage.description)
     setPicture(PratoStorage.picture)
   }, [PratoStorage.name])
-  
+
   return(
     <Container>
       <HeaderAdmin/>
@@ -142,9 +140,7 @@ export function EditPrato(){
               id="Nome"
               placeholder={name}
               onChange={e => {
-                setName(e.target.value)
-                console.log(name)
-              }}
+                setName(e.target.value)}}
             />
           </label>
 
