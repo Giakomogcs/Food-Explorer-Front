@@ -7,11 +7,17 @@ import PicturePlaceholder from '../../../public/images/PlaceholderImg.jpg'
 import { useNavigate } from "react-router-dom"
 import { api } from "../../services/api";
 
+import { useState, useEffect } from "react"
+
 
 export function Prato({title, description, price, icon: Icon, id, image}){
   
   const navigate = useNavigate()
   const PicturePrato = image ? `${api.defaults.baseURL}/files/${image}` : PicturePlaceholder
+
+  const [quantity, setQuantity] = useState(0)
+  const [recipes, setRecipes] = useState([])
+  //const recipeStorage = localStorage.getItem("@food-explorer:recipes")
 
   function handleDetails(id){
     
@@ -21,6 +27,27 @@ export function Prato({title, description, price, icon: Icon, id, image}){
   function handleEdit(id){
     
     navigate(`/edit/${id}`)
+  }
+
+  function addStore(name){
+    if (quantity <= 99) {
+      setQuantity(quantity+1)
+    }
+    catchRecipes(name)
+  }
+
+  function deleteStore(name){
+    if (quantity > 0) {
+      setQuantity(quantity-1)
+    }
+    catchRecipes(name)
+  }
+
+  function catchRecipes(prato) {
+    
+    setRecipes(prevState => [...prevState, prato])
+    console.log(recipes)
+    localStorage.setItem("@food-explorer:recipes", JSON.stringify(recipes))
   }
 
   return(
@@ -55,9 +82,9 @@ export function Prato({title, description, price, icon: Icon, id, image}){
 
           <Include>
             <div>
-              <FiMinus/>
-              <label>01</label>
-              <FiPlus/>
+              <FiMinus onClick={()=>{deleteStore(title)}}/>
+              <label>{quantity}</label>
+              <FiPlus onClick={()=>{addStore(title)}}/>
             </div>
 
             <Button title="Incluir"/>
