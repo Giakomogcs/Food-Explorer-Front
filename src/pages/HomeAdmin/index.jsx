@@ -89,6 +89,7 @@ export function HomeAdmin(){
                   description={prato.description}
                   price={"R$ " + (prato.price)} 
                   icon={BsPencil}
+                  image={prato.picture}
                 />
               ))
             }
@@ -107,7 +108,9 @@ export function HomeAdmin(){
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + prato.price} 
-                  icon={BsPencil}/>
+                  icon={BsPencil}
+                  image={prato.picture}
+                  />
               ))
             }
 
@@ -125,7 +128,9 @@ export function HomeAdmin(){
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (prato.price)} 
-                  icon={BsPencil}/>
+                  icon={BsPencil}
+                  image={prato.picture}
+                  />
               ))
             }
 
@@ -143,7 +148,8 @@ export function HomeAdmin(){
                   title={prato.name + " >"}
                   description={prato.description}
                   price={"R$ " + (prato.price)} 
-                  icon={BsPencil}/>
+                  icon={BsPencil}
+                  image={prato.picture}/>
               ))
             }
 

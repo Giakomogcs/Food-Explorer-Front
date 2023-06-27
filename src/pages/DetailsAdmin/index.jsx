@@ -9,8 +9,12 @@ import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
 
 import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 export function DetailsAdmin(){
+  const navigate = useNavigate()
+  const params = useParams()
   return(
     <Container>
       <HeaderAdmin/>
