@@ -99,6 +99,8 @@ export const Details = styled.div`
   .Content{
     height: 100%;
     margin: 40px 0;
+    display: flex;
+    flex-direction: column;
 
     .Insert{
 

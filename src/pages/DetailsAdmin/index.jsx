@@ -7,14 +7,44 @@ import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
+import PicturePlaceholder from '../../../public/images/PlaceholderImg.jpg'
 
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
+import { useEffect, useState } from "react"
+import { api } from "../../services/api"
+
 export function DetailsAdmin(){
   const navigate = useNavigate()
   const params = useParams()
+
+  const[Ingredients, setIngredientes] = useState([])
+  const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
+  const PicturePrato = PicturePlaceholder
+
+  function catchIngredients(data){
+    let hist = []
+    
+    data.Ingredients.map((ingrediente, index) => {
+      if(!hist.includes(ingrediente)){
+        setIngredientes(hist)
+      }
+      hist.push(ingrediente.name)
+    })
+  }
+
+  useEffect(() => {
+    async function searchPrato(){
+      const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
+
+      localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
+      catchIngredients(response.data)
+    }
+    
+    searchPrato()
+  },[])
   return(
     <Container>
       <HeaderAdmin/>
@@ -30,31 +60,34 @@ export function DetailsAdmin(){
 
         <Details>
           <img className="Prato"
-            src="https://github.com/giakomogcs.png" 
+            src={ PratoStorage.picture ? `${api.defaults.baseURL}/files/${PratoStorage.picture}` : PicturePlaceholder
+          } 
             alt="Foto do Prato" 
           />
 
           <div className="Content">
-            <h2>Salada Ravanello</h2>
+            <h2>{PratoStorage.name}</h2>
 
             <p>
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+              {PratoStorage.description}
             </p>
 
             <Session>
-              <TagPratoPage title="Sodfefgefgpa"/>
-              <TagPratoPage title="Sopa"/>
-              <TagPratoPage title="Sopa"/>
-              <TagPratoPage title="Sopa"/>
-              <TagPratoPage title="carai de asa"/>
-              <TagPratoPage title="Sopa"/>
-              <TagPratoPage title="Sopofofoa"/>
-              <TagPratoPage title="Sopa"/>
+            {
+                Ingredients.map((ingrediente, index) => (
+                  <TagPratoPage 
+                    key={String(index)}
+                    title={ingrediente}
+                  />
+                ))
+              }
             </Session>
 
-            <Button className="Insert" title="Editar prato" />
+            <Button 
+            className="Insert" 
+            title="Editar prato" 
+            onClick={() => {navigate(`/edit/${params.prato_id}`)}}
+            />
           </div>
         </Details>
 

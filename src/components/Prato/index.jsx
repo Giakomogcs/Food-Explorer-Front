@@ -29,37 +29,41 @@ export function Prato({title, description, price, icon: Icon, id, image}){
         {Icon && <Icon size={24}/>}
       </div>
 
-      <div className="body" onClick={() => handleDetails(id)}>
-        <Picture>
-          <img 
-            src={PicturePrato} 
-            alt="Foto do Prato" 
-          />
-        </Picture>
+      <div className="body">
+        <div className="cardInfo" onClick={() => handleDetails(id)}>
+          <Picture>
+            <img 
+              src={PicturePrato} 
+              alt="Foto do Prato" 
+            />
+          </Picture>
 
-        <p className="title">
-          {title}
-        </p>
+          <p className="title">
+            {title}
+          </p>
 
-        <p className="description">
-          {description}
-        </p>
+          <p className="description">
+            {description}
+          </p>
 
-        <p className="price">
-          {price}
-        </p>
+          <p className="price">
+            {price}
+          </p>
+        </div>
 
-        <Include>
-          <div>
-            <FiMinus/>
-            <label>01</label>
-            <FiPlus/>
-          </div>
+        <div className="includeSpace">
 
-          <Button title="Incluir"/>
-        </Include>
+          <Include>
+            <div>
+              <FiMinus/>
+              <label>01</label>
+              <FiPlus/>
+            </div>
+
+            <Button title="Incluir"/>
+          </Include>
+        </div>
       </div>
-
 
     </Container>
   )
