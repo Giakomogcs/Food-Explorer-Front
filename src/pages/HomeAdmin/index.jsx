@@ -42,10 +42,17 @@ export function HomeAdmin(){
     async function fechtSearch(){
 
       const search = searchStorage.replace(/["]/g, '');
-      
-      const path = "/pratos?name=" + search
 
-      const response = await api.get(path)
+
+      const pathIngredients = `/pratos?Ingredients=${search}`
+      const pathName = `/pratos?name=${search}`
+
+      let response = await api.get(pathIngredients)
+
+      if (response.data.length === 0){
+        response = await api.get(pathName)
+      }
+      console.log(response.data)
       setPratos(response.data)
     }
 
