@@ -16,16 +16,14 @@ export function Prato({title, description, price, icon: Icon, id, image}){
   const PicturePrato = image ? `${api.defaults.baseURL}/files/${image}` : PicturePlaceholder
 
   const [quantity, setQuantity] = useState(0)
-  const [recipes, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState('')
   //const recipeStorage = localStorage.getItem("@food-explorer:recipes")
 
   function handleDetails(id){
-    
     navigate(`/details/${id}`)
   }
 
   function handleEdit(id){
-    
     navigate(`/edit/${id}`)
   }
 
@@ -49,6 +47,10 @@ export function Prato({title, description, price, icon: Icon, id, image}){
     console.log(recipes)
     localStorage.setItem("@food-explorer:recipes", JSON.stringify(recipes))
   }
+
+  useEffect(() => {
+
+  }, [title, description, price, Icon, id, image])
 
   return(
     <Container>

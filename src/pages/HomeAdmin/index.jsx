@@ -18,21 +18,19 @@ export function HomeAdmin(){
   const [pratosPrincipais, setPratosPrincipais] = useState([])
   const [sobremesas, setSobremesas] = useState([])
   const [bebidas, setBebidas] = useState([])
+  
 
-  const RefeicaoStorage = localStorage.getItem("@food-explorer:refeicao", JSON.stringify(refeicao))
-  const PratosPrincipaisStorage = localStorage.getItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
-  const SobremesaStorage = localStorage.getItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
-  const BebidaStorage = localStorage.getItem("@food-explorer:bebidas", JSON.stringify(bebidas))
-
+  let RefeicaoStorage = localStorage.getItem("@food-explorer:refeicao", JSON.stringify(refeicao))
+  let PratosPrincipaisStorage = localStorage.getItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
+  let SobremesaStorage = localStorage.getItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
+  let BebidaStorage = localStorage.getItem("@food-explorer:bebidas", JSON.stringify(bebidas))
+  let searchStorage = localStorage.getItem("@food-explorer:search", "")
+  //console.log("home")
+  //console.log(searchStorage)
   const navigate = useNavigate()
 
   function handleDetails(id){
     navigate(`/details/${id}`)
-  }
-
-  async function fetchPratos() {
-    const response = await api.get(`http://localhost:3333/pratos?name`)
-    setPratos(response.data)
   }
   
   useEffect(() => {
@@ -41,35 +39,51 @@ export function HomeAdmin(){
     setSobremesas([])
     setBebidas([])
 
-    fetchPratos()
+    async function fechtSearch(){
+
+      const search = searchStorage.replace(/["]/g, '');
+      
+      const path = "/pratos?name=" + search
+
+      const response = await api.get(path)
+      setPratos(response.data)
+    }
+
+    fechtSearch()
     
     pratos.map(prato => {
   
       if(prato.category === "Refeição"){
         setRefeicao(prevState => [...prevState, prato])
-        localStorage.setItem("@food-explorer:refeicao", JSON.stringify(refeicao))
+        RefeicaoStorage = localStorage.getItem("@food-explorer:refeicao", JSON.stringify(refeicao))
       }
   
       if(prato.category === "Pratos principais"){
         setPratosPrincipais(prevState => [...prevState, prato])
-        localStorage.setItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
+        PratosPrincipaisStorage = localStorage.getItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
       }
       
       if(prato.category === "Sobremesas"){
         setSobremesas(prevState => [...prevState, prato])
-        localStorage.setItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
+        SobremesaStorage = localStorage.getItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
       }
       
       if(prato.category === "Bebidas"){
         setBebidas(prevState => [...prevState, prato])
-        localStorage.setItem("@food-explorer:bebidas", JSON.stringify(bebidas))
+        BebidaStorage = localStorage.getItem("@food-explorer:bebidas", JSON.stringify(bebidas))
       }
+      
+      localStorage.setItem("@food-explorer:refeicao", JSON.stringify(refeicao))
+      localStorage.setItem("@food-explorer:pratos-principais", JSON.stringify(pratosPrincipais))
+      localStorage.setItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
+      localStorage.setItem("@food-explorer:bebidas", JSON.stringify(bebidas))
     })
 
-  }, [pratos])
+  }, [pratos,searchStorage])
+
   
   return(
-    <Container onload={fetchPratos}>
+    <Container onload="fechtSearch()">
       <header>
         <HeaderAdmin/>
       </header>

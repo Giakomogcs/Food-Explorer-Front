@@ -28,6 +28,8 @@ export function NewPrato(){
   const [pictureFile, setPictureFile] = useState(null)
 
   const navigate = useNavigate()
+  
+  localStorage.setItem("@food-explorer:search", "")
 
   function handleAddIngrediente(){
     if (newIngrediente.length == 0){

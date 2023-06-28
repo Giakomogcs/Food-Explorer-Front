@@ -10,10 +10,21 @@ import {Input} from "../../components/SearchBar"
 
 import { useAuth } from "../../hooks/auth";
 import {Link} from 'react-router-dom'
+import { useState, useEffect } from "react";
 
 
 export function MenuAdmin(){
   const {signOut} = useAuth()
+
+  const searchStorage = localStorage.getItem("@food-explorer:search")
+  const [searchAdmin, setSearch] = useState(searchStorage)
+
+  useEffect(() => {
+    const search = String(searchAdmin)
+
+    localStorage.setItem("@food-explorer:search", search)
+    //console.log(search)
+  }, [searchAdmin])
 
   return(
     <Container>
@@ -21,7 +32,11 @@ export function MenuAdmin(){
 
 
       <div>
-        <Input placeholder = "Busque por pratos ou ingredientes" icon={FiSearch}/>
+        <Input 
+          placeholder = "Busque por pratos ou ingredientes" 
+          icon={FiSearch}
+          onChange ={(e) => setSearch(e.target.value)}
+        />
         
         <Link to="/new">
           <Session title="Novo prato"/>

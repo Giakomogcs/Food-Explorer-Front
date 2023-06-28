@@ -22,7 +22,7 @@ export function DetailsAdmin(){
 
   const[Ingredients, setIngredientes] = useState([])
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
-  const PicturePrato = PicturePlaceholder
+  localStorage.setItem("@food-explorer:search", "")
 
   function catchIngredients(data){
     let hist = []

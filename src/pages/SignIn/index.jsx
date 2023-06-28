@@ -13,6 +13,7 @@ export function SignIn(){
   const [password, setPassword] = useState("")
 
   const {signIn} = useAuth()
+  localStorage.setItem("@food-explorer:search", JSON.stringify(""))
 
   function handleSignIn() {
     signIn({email, password})

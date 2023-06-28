@@ -8,14 +8,21 @@ import {Link} from 'react-router-dom'
 
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export function HeaderAdmin(){
-  const [searchAdmin, setSearch] = useState("")
+  const searchStorage = localStorage.getItem("@food-explorer:search")
+  const [searchAdmin, setSearch] = useState(searchStorage)
   
   const {signOut} = useAuth()
-
+  
+  useEffect(() => {
+    const search = String(searchStorage)
+    localStorage.setItem("@food-explorer:search", searchAdmin)
+    //console.log(search)
+  }, [searchAdmin])
+  
   return(
     <Container>
       <Content>
@@ -43,6 +50,7 @@ export function HeaderAdmin(){
             placeholder = "Busque por pratos ou ingredientes" 
             icon={FiSearch}
             onChange ={(e) => setSearch(e.target.value)}
+            
           />
         </div>
 

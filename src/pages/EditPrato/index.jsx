@@ -35,6 +35,7 @@ export function EditPrato(){
   const [pictureFile, setPictureFile] = useState(null)
   
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
+  localStorage.setItem("@food-explorer:search", "")
 
   //window.location.reload();
   
