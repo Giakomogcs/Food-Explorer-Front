@@ -52,7 +52,7 @@ export function HomeAdmin(){
       if (response.data.length === 0){
         response = await api.get(pathName)
       }
-      console.log(response.data)
+      //console.log(response.data)
       setPratos(response.data)
     }
 
