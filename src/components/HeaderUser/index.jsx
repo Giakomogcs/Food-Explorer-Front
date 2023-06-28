@@ -7,10 +7,21 @@ import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 
 import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 
 export function HeaderUser(){
+  const searchStorage = localStorage.getItem("@food-explorer:search")
+  const [searchAdmin, setSearch] = useState(searchStorage)
+
   const {signOut} = useAuth()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const search = String(searchStorage)
+    localStorage.setItem("@food-explorer:search", searchAdmin)
+    //console.log(search)
+  }, [searchAdmin])
   
   return(
     <Container>
@@ -35,6 +46,7 @@ export function HeaderUser(){
           <Input
             placeholder = "Busque por pratos ou ingredientes" 
             icon={FiSearch}
+            onChange ={(e) => setSearch(e.target.value)}
           />
         </div>
 
@@ -42,7 +54,7 @@ export function HeaderUser(){
           <div className="Receipt">
             <img src="../../../public/images/Receipt.svg" alt="icon de receitas" />
             <p>Pedidos (0)</p>
-            <span>1</span>
+            <span>0</span>
           </div>
         </Receipt>
 
