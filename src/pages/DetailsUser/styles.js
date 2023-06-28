@@ -57,7 +57,25 @@ export const Content = styled.div`
   }
 
   .Voltar{
-    margin-bottom: 16px;
+    display: flex;
+    height: 23px;
+    width: auto;
+    align-items: center;
+    justify-content: start;
+    
+  
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    
+    
+    color: ${({theme}) => theme.COLORS.LIGHT_300};
+  
+    border: none;
+    margin-bottom: 35px;
+    background-color: transparent;
 
     >.Smaller{
       height: 22px;
@@ -81,6 +99,27 @@ export const Details = styled.div`
   .Content{
     height: 100%;
     margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+
+    .Insert{
+
+      width: 188px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+
+      margin-top: 24px;
+    }
   }
 
   .Prato{
@@ -151,56 +190,4 @@ export const Details = styled.div`
   }
   
 
-`;
-
-export const Include = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-
-  margin-top: 48px;
-
-  >div{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-    display: flex;
-    gap: 14px;
-
-    >svg{
-      font-size: 24px;
-    }
-
-    >label{
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 23px;
-      line-height: 160%;
-    }
-  }
-
-  >button{
-    height: 32px;
-    margin: 0;
-  }
-
-  .Insert{
-
-    width: 188px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
 `;
