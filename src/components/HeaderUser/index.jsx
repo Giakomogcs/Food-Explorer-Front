@@ -6,10 +6,11 @@ import { useAuth } from "../../hooks/auth";
 import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 
-import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 export function HeaderUser(){
   const {signOut} = useAuth()
+  const navigate = useNavigate()
   
   return(
     <Container>
@@ -45,7 +46,10 @@ export function HeaderUser(){
           </div>
         </Receipt>
 
-        <RxExit onClick = {signOut}/>
+        <RxExit onClick = {()=> {
+          navigate("/")
+          signOut()
+          }}/>
       </Content>
 
     </Container>

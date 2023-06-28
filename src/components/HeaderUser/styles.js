@@ -46,6 +46,7 @@ export const Content = styled.div`
     display: none;
   }
 
+
   @media all and (max-width: 768px) {
     
     >svg{
