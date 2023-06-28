@@ -25,8 +25,7 @@ export function HomeAdmin(){
   let SobremesaStorage = localStorage.getItem("@food-explorer:sobremesas", JSON.stringify(sobremesas))
   let BebidaStorage = localStorage.getItem("@food-explorer:bebidas", JSON.stringify(bebidas))
   let searchStorage = localStorage.getItem("@food-explorer:search", "")
-  //console.log("home")
-  //console.log(searchStorage)
+
   const navigate = useNavigate()
 
   function handleDetails(id){
