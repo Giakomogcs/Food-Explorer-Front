@@ -86,6 +86,15 @@ export function EditPrato(){
       hist.push(ingrediente.name)
     })
   }
+
+  async function removePrato(){
+    const confirm = window.confirm("Deseja realmente remover o prato?")
+
+    if(confirm){
+      await api.delete(`/pratos/${params.prato_id}`)
+      navigate("/")
+    }
+  }
   
   useEffect(() => {
     async function searchPrato(){
@@ -216,7 +225,7 @@ export function EditPrato(){
         </div>
 
         <div className="Buttons">
-          <Button className="DeleteButton" title="Excluir prato" />
+          <Button className="DeleteButton" title="Excluir prato" onClick={removePrato}/>
           <Button className="SaveButton" title="Salvar Alterações" onClick={handleUpdate}/>
         </div>
 
