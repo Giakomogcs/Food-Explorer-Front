@@ -1,4 +1,6 @@
 import { Container, Picture, Include} from "./styles";
+import {FiHeart} from 'react-icons/fi'
+import {BsPencil} from 'react-icons/bs'
 
 import {Button} from "../../components/Button"
 import {FiMinus,FiPlus} from 'react-icons/fi'
@@ -10,21 +12,31 @@ import { api } from "../../services/api";
 import { useState, useEffect } from "react"
 
 
-export function Prato({title, description, price, icon: Icon, id, image}){
+export function Prato({title, description, price, icon: Icon, id, image, isUser}){
   
   const navigate = useNavigate()
   const PicturePrato = image ? `${api.defaults.baseURL}/files/${image}` : PicturePlaceholder
+  //const [isUser, setIsUser] = useState(false)
 
+  
   const [quantity, setQuantity] = useState(0)
   const [recipes, setRecipes] = useState('')
+  
   //const recipeStorage = localStorage.getItem("@food-explorer:recipes")
-
+  
   function handleDetails(id){
     navigate(`/details/${id}`)
   }
-
-  function handleEdit(id){
-    navigate(`/edit/${id}`)
+  
+  function handleIcon(id){
+    
+    if(Icon == BsPencil){
+      navigate(`/edit/${id}`)
+    }
+    if(Icon == FiHeart){
+      //setIsUser(true)
+      console.log(isUser)
+    }
   }
 
   function addStore(name){
@@ -50,11 +62,11 @@ export function Prato({title, description, price, icon: Icon, id, image}){
 
   useEffect(() => {
 
-  }, [title, description, price, Icon, id, image])
+  }, [title, description, price, Icon, id, image, isUser])
 
   return(
-    <Container>
-      <div className="Icon" onClick={() => handleEdit(id)}>
+    <Container isUser={isUser}>
+      <div className="Icon" onClick={() => handleIcon(id)}>
         {Icon && <Icon size={24}/>}
       </div>
 

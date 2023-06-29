@@ -111,6 +111,7 @@ export function HomeUser(){
                   price={"R$ " + (prato.price)} 
                   icon={FiHeart}
                   image={prato.picture}
+                  isUser
                 />
               ))
             }
@@ -131,6 +132,7 @@ export function HomeUser(){
                   price={"R$ " + prato.price} 
                   icon={FiHeart}
                   image={prato.picture}
+                  isUser
                 />
               ))
             }
@@ -152,6 +154,7 @@ export function HomeUser(){
                 price={"R$ " + (prato.price)} 
                 icon={FiHeart}
                 image={prato.picture}
+                isUser
               />
             ))
           }
@@ -171,7 +174,9 @@ export function HomeUser(){
                   description={prato.description}
                   price={"R$ " + (prato.price)} 
                   icon={FiHeart}
-                  image={prato.picture}/>
+                  image={prato.picture}
+                  isUser
+                />
               ))
             }
 

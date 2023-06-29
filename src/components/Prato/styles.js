@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Link} from 'react-router-dom'
 
 export const Container = styled.li`
+
   .Icon {
     position: relative;
     width: 25px;
@@ -10,11 +11,16 @@ export const Container = styled.li`
     >svg{
       width: 21px;
       color: ${({theme}) => theme.COLORS.LIGHT_300};
+      fill: ${({ theme, isUser}) => {isUser ? theme.COLORS.LIGHT_300 : theme.COLORS.LIGHT_300} };
       position: relative;
       left: 170px;
       top: 35px;
 
       cursor: pointer;
+    }
+
+    svg:hover{
+      fill: ${({theme}) => theme.COLORS.LIGHT_300};
     }
   }
 
