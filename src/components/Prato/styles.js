@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom'
 
 export const Container = styled.li`
 
+  background-color: ${({theme}) => theme.COLORS.DARK_300};
+  animation-name: cardColor;
+  animation-duration: 3s;
+  border-radius: 8px;
+
   .Icon {
     position: relative;
     width: 25px;
@@ -37,7 +42,6 @@ export const Container = styled.li`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    background-color: ${({theme}) => theme.COLORS.DARK_300};
     color: ${({theme}) => theme.COLORS.LIGHT_300};
 
     .cardInfo{
@@ -117,6 +121,15 @@ export const Container = styled.li`
     }
   }
 
+  /* The animation code */
+  @keyframes cardColor {
+    0%   {background-color: ${({theme}) => theme.COLORS.DARK_300};}
+    25%  {background-color: ${({theme}) => theme.COLORS.DARK_500};}
+    50%  {background-color: ${({theme}) => theme.COLORS.DARK_700};}
+    100% {background-color: ${({theme}) => theme.COLORS.DARK_300};}
+  }
+
+
 `;
 
 
@@ -125,6 +138,8 @@ export const Picture = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  animation-name: imgFlow;
+  animation-duration: 2s;
 
   >img{
     height: 88px;
@@ -133,6 +148,10 @@ export const Picture = styled.div`
     cursor: pointer;
 
     margin-top: 15px;
+  }
+
+  img:hover{
+    scale: 1.1;
   }
 
   
@@ -145,6 +164,11 @@ export const Picture = styled.div`
 
       margin-top: 40px;
     }
+  }
+
+  @keyframes imgFlow {
+    0%   {opacity: 0; transform : translateY(15px)}
+    100% {opacity: 1; transform : translateY(0px)}
   }
 
 `;
@@ -198,3 +222,5 @@ export const Include = styled.div`
 
   }
 `;
+
+
