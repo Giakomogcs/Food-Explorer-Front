@@ -101,25 +101,6 @@ export const Details = styled.div`
     margin: 40px 0;
     display: flex;
     flex-direction: column;
-
-    .Insert{
-
-      width: 188px;
-      height: 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 24px;
-
-      margin-top: 24px;
-    }
   }
 
   .Prato{
@@ -190,4 +171,47 @@ export const Details = styled.div`
   }
   
 
+`;
+
+export const Include = styled.div`
+
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+
+  >.Number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 14px;
+    >svg{
+      font-size: 24px;
+    }
+    >label{
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 160%;
+    }
+  }
+  
+  .Insert{
+    width: 188px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    button{
+      margin: none;
+    }
+  }
 `;

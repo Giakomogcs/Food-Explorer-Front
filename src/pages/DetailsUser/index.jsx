@@ -1,4 +1,4 @@
-import { Container, Content, Details} from "./styles"
+import { Container, Content, Details, Include} from "./styles"
 
 import {FiMinus,FiPlus} from 'react-icons/fi'
 
@@ -7,6 +7,7 @@ import { HeaderUser } from "../../components/HeaderUser"
 import { Session } from "../../components/Session"
 import { Footer } from "../../components/Footer"
 import {TagPratoPage} from "../../components/TagPratoPage"
+import PicturePlaceholder from '../../../public/images/PlaceholderImg.jpg'
 
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
@@ -19,9 +20,24 @@ export function DetailsUser(){
   const navigate = useNavigate()
   const params = useParams()
 
+  const [quantity, setQuantity] = useState(0)
+  const [recipes, setRecipes] = useState('')
+
   const[Ingredients, setIngredientes] = useState([])
   const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
   localStorage.setItem("@food-explorer:search", "")
+
+  function addStore(){
+    if (quantity <= 99) {
+      setQuantity(quantity+1)
+    }
+  }
+
+  function deleteStore(){
+    if (quantity > 0) {
+      setQuantity(quantity-1)
+    }
+  }
 
   function catchIngredients(data){
     let hist = []
@@ -83,11 +99,15 @@ export function DetailsUser(){
               }
             </Session>
 
-            <Button 
-            className="Insert" 
-            title="Editar prato" 
-            onClick={() => {navigate(`/edit/${params.prato_id}`)}}
-            />
+            <Include>
+              <div className="Number">
+                <FiMinus onClick={()=>{deleteStore()}}/>
+                <label>{quantity}</label>
+                <FiPlus onClick={()=>{addStore()}}/>
+              </div>
+
+              <Button className="Insert" title="Incluir" img={<img src="../../../public/images/Receipt.svg" alt="icone de receitas"/>} />
+            </Include>
           </div>
         </Details>
 
