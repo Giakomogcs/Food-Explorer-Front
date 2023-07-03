@@ -44,7 +44,7 @@ Para logar na conta admin basta inserir na pagina de login:
   senha: 123
 ```
 ## 🔗 Links
-- `https://www.figma.com/community/file/1196874589259687769/food-explorer-v2`
+- Figma do projeto: `https://www.figma.com/community/file/1196874589259687769/food-explorer-v2`
 
 
 ## Feedback
