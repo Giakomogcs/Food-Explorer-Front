@@ -21,12 +21,12 @@ export function SignUp(){
       return alert("Preencha todos os campos!")
     }
 
-    if(!email.includes("@")){
+    if(!email.includes("@" && ".")){
       return alert("E-mail inválido")
     }
 
     if(password.length<8){
-      return alert("Senha inválida")
+      return alert("Senha inválida, é necessário no minimo 8 caracteres")
     }
 
     api.post("/users", {name, email, password})
@@ -80,7 +80,7 @@ export function SignUp(){
         <label htmlFor="Password">
           <p>Password</p>
           <Input
-            placeholder="No mínimo 6 caracteres"
+            placeholder="No mínimo 8 caracteres"
             type="password"
             id="Password"
             onChange={e => setPassword(e.target.value)}

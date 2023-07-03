@@ -199,7 +199,7 @@ export function EditPrato(){
               onChange={e => {
                 if(!isNaN(e.target.value)){
                   if (e.target.value === ""){
-                    alert("preencha o campo de preço.")
+                    alert("Use ponto, siga o exemplo a seguir: 21.12")
                   }else{
                     setPrice(e.target.value)
                   }

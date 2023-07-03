@@ -189,9 +189,9 @@ export function NewPrato(){
               type="text"
               onChange={e => {
                 if(!isNaN(e.target.value)){
-                  setPrice(e.target.value)
+                  setPrice(parseFloat(e.target.value).toFixed(2))
                 } else{
-                  alert("siga o exemplo a seguir: 21.12")
+                  alert("Use ponto, siga o exemplo a seguir: 21.12")
                   e.target.value = ""
                 }
               }}

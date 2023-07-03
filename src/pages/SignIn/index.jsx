@@ -41,7 +41,7 @@ export function SignIn(){
         <label htmlFor="Password">
           <p>Password</p>
           <Input
-            placeholder="No mínimo 6 caracteres"
+            placeholder="No mínimo 8 caracteres"
             type="password"
             id="Password"
             onChange= {e => setPassword(e.target.value)}

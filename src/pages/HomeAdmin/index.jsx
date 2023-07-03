@@ -107,7 +107,7 @@ export function HomeAdmin(){
                   id={prato.id}
                   title={prato.name + " >"}
                   description={prato.description}
-                  price={"R$ " + (prato.price)} 
+                  price={"R$ " + parseFloat(prato.price.toFixed(2))} 
                   icon={BsPencil}
                   image={prato.picture}
                 />
