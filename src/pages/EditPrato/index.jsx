@@ -41,6 +41,10 @@ export function EditPrato(){
   //window.location.reload();
   
   async function handleUpdate(){
+
+    if(newIngrediente){
+      return alert("O campo de igredientes tem conteúdo a ser adicionado. Clique em adicionar ou esvazie o campo")
+    }
     
     const prato = {
       name,
