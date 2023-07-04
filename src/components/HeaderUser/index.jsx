@@ -12,6 +12,7 @@ import {Link} from 'react-router-dom'
 
 import menu from "../../../public/images/Menu.svg"
 import logo_user from "../../../public/images/Logo_user.svg"
+import receipt from "../../../public/images/Receipt.svg"
 
 export function HeaderUser(){
   const searchStorage = localStorage.getItem("@food-explorer:search")
@@ -55,7 +56,7 @@ export function HeaderUser(){
 
         <Receipt>
           <div className="Receipt">
-            <img src="../../../public/images/Receipt.svg" alt="icon de receitas" />
+            <img src={receipt} alt="icon de receitas" />
             <p>Pedidos (0)</p>
             <span>0</span>
           </div>

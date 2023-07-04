@@ -15,6 +15,9 @@ import { useParams } from "react-router-dom"
 
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
+import smaller from "../../../public/images/smaller.svg"
+import receipt from "../../../public/images/Receipt.svg"
+
 
 export function DetailsUser(){
   const navigate = useNavigate()
@@ -52,7 +55,7 @@ export function DetailsUser(){
 
   useEffect(() => {
     async function searchPrato(){
-      const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
+      const response = await api.get(`/pratos/${params.prato_id}`)
 
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
       catchIngredients(response.data)
@@ -69,7 +72,7 @@ export function DetailsUser(){
 
         <Link to="/" >
           <button className="Voltar">
-            <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
+            <img className="Smaller" src={smaller} alt="icone de voltar página"/>
             voltar
           </button>
         </Link>
@@ -106,7 +109,7 @@ export function DetailsUser(){
                 <FiPlus onClick={()=>{addStore()}}/>
               </div>
 
-              <Button className="Insert" title="Incluir" img={<img src="../../../public/images/Receipt.svg" alt="icone de receitas"/>} />
+              <Button className="Insert" title="Incluir" img={<img src={receipt} alt="icone de receitas"/>} />
             </Include>
           </div>
         </Details>
