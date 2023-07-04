@@ -44,7 +44,7 @@ export function DetailsAdmin(){
     async function searchPrato(){
 
       const response = await api.get(`/pratos/${params.prato_id}`)
-      console.log(response.data)
+      //console.log(response.data)
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
       catchIngredients(response.data)
     }

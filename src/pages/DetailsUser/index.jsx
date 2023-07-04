@@ -25,9 +25,9 @@ export function DetailsUser(){
 
   const [quantity, setQuantity] = useState(0)
   const [recipes, setRecipes] = useState('')
+  const[PratoStorage, setPratoStorage] = useState([])
 
   const[Ingredients, setIngredientes] = useState([])
-  const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
   localStorage.setItem("@food-explorer:search", "")
 
   function addStore(){
@@ -42,8 +42,11 @@ export function DetailsUser(){
     }
   }
 
+  
   function catchIngredients(data){
     let hist = []
+
+    setPratoStorage(JSON.parse(localStorage.getItem("@food-explorer:Edit")))
     
     data.Ingredients.map((ingrediente, index) => {
       if(!hist.includes(ingrediente)){
