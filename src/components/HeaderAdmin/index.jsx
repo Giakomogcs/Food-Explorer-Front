@@ -10,6 +10,8 @@ import {RxExit} from'react-icons/rx'
 import {FiSearch} from 'react-icons/fi'
 import { useState, useEffect } from "react";
 
+import menu from "../../../public/images/Menu.svg"
+
 
 export function HeaderAdmin(){
   const searchStorage = localStorage.getItem("@food-explorer:search")
@@ -30,7 +32,7 @@ export function HeaderAdmin(){
         <div className="Menu">
           <Menu to="/menu">
             <img 
-              src="../../../public/images/Menu.svg" alt="icon Menu" 
+              src={menu} alt="icon Menu" 
             />
           </Menu>
         </div>
