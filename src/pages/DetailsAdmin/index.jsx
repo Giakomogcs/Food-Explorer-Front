@@ -21,11 +21,14 @@ export function DetailsAdmin(){
   const params = useParams()
 
   const[Ingredients, setIngredientes] = useState([])
-  const PratoStorage = JSON.parse(localStorage.getItem("@food-explorer:Edit"))
+  const[PratoStorage, setPratoStorage] = useState([])
+
   localStorage.setItem("@food-explorer:search", "")
 
   function catchIngredients(data){
     let hist = []
+
+    setPratoStorage(JSON.parse(localStorage.getItem("@food-explorer:Edit")))
     
     data.Ingredients.map((ingrediente, index) => {
       if(!hist.includes(ingrediente)){
@@ -37,8 +40,9 @@ export function DetailsAdmin(){
 
   useEffect(() => {
     async function searchPrato(){
-      const response = await api.get(`https://foodexplorer-api-cjyi.onrender.com/pratos/${params.prato_id}`)
 
+      const response = await api.get(`/pratos/${params.prato_id}`)
+      console.log(response.data)
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
       catchIngredients(response.data)
     }
