@@ -21,7 +21,7 @@ O **usuário** irá visualizar todos os pratos cadastrados e, quando clicar em u
 O link do deploy é:
 
 ```bash
-  URL
+  https://foodexplorergi.netlify.app/
 ```
 
 
@@ -31,7 +31,7 @@ Instale o projeto com npm
 
 ```bash
   npm install
-  npm start
+  npm run dev
 ```
     
 
@@ -45,6 +45,8 @@ Para logar na conta admin basta inserir na pagina de login:
 ```
 ## 🔗 Links
 - Figma do projeto: https://www.figma.com/community/file/1196874589259687769/food-explorer-v2
+
+- link deploy front-end: https://foodexplorergi.netlify.app/
 
 
 ## Feedback
