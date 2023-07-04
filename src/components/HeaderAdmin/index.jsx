@@ -11,7 +11,11 @@ import {FiSearch} from 'react-icons/fi'
 import { useState, useEffect } from "react";
 
 import menu from "../../../public/images/Menu.svg"
-
+import logo_user from "../../../public/images/Logo_user.svg"
+import admin_img from "../../../public/images/admin.svg"
+import menu from "../../../public/images/Menu.svg"
+import menu from "../../../public/images/Menu.svg"
+import menu from "../../../public/images/Menu.svg"
 
 export function HeaderAdmin(){
   const searchStorage = localStorage.getItem("@food-explorer:search")
@@ -39,11 +43,11 @@ export function HeaderAdmin(){
 
         <Logo>
           <img className="Logo"
-            src="../../../public/images/Logo_user.svg" alt="Logo para usuários" 
+            src={logo_user} alt="Logo para usuários" 
           />
           
           <img 
-            src="../../../public/images/admin.svg" alt="icon Menu" 
+            src={admin_img} alt="icon Menu" 
           />
         </Logo>
 
