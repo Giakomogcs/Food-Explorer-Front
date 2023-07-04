@@ -37,7 +37,7 @@ export function DetailsAdmin(){
 
   useEffect(() => {
     async function searchPrato(){
-      const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
+      const response = await api.get(`/pratos/${params.prato_id}`)
 
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
       catchIngredients(response.data)
