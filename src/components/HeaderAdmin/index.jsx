@@ -30,18 +30,18 @@ export function HeaderAdmin(){
         <div className="Menu">
           <Menu to="/menu">
             <img 
-              src="public\images\Menu.svg" alt="icon Menu" 
+              src="D:\Rocketseat\Explorer\Avaliação\Food-Explorer\public\images\Menu.svg" alt="icon Menu" 
             />
           </Menu>
         </div>
 
         <Logo>
           <img className="Logo"
-            src="public\images\Logo_user.svg" alt="Logo para usuários" 
+            src="D:\Rocketseat\Explorer\Avaliação\Food-Explorer\public\images\Logo_user.svg" alt="Logo para usuários" 
           />
           
           <img 
-            src="public\images\admin.svg" alt="icon Menu" 
+            src="D:\Rocketseat\Explorer\Avaliação\Food-Explorer\public\images\admin.svg" alt="icon Menu" 
           />
         </Logo>
 
