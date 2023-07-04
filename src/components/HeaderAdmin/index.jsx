@@ -13,9 +13,7 @@ import { useState, useEffect } from "react";
 import menu from "../../../public/images/Menu.svg"
 import logo_user from "../../../public/images/Logo_user.svg"
 import admin_img from "../../../public/images/admin.svg"
-import menu from "../../../public/images/Menu.svg"
-import menu from "../../../public/images/Menu.svg"
-import menu from "../../../public/images/Menu.svg"
+
 
 export function HeaderAdmin(){
   const searchStorage = localStorage.getItem("@food-explorer:search")
