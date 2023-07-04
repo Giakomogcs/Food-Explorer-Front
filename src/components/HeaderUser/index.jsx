@@ -10,6 +10,9 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
 
+import menu from "../../../public/images/Menu.svg"
+import logo_user from "../../../public/images/Logo_user.svg"
+
 export function HeaderUser(){
   const searchStorage = localStorage.getItem("@food-explorer:search")
   const [searchAdmin, setSearch] = useState(searchStorage)
@@ -29,14 +32,14 @@ export function HeaderUser(){
 
         <Menu to="/menu">
           <div className="Menu">
-              <img src="../../../public/images/Menu.svg" alt="icon Menu"/>
+              <img src={menu} alt="icon Menu"/>
           </div>
         </Menu>
 
         <Logo>
           <div className="Logo">
             <img 
-              src="../../../public/images/Logo_user.svg" alt="Logo para usuários" 
+              src={logo_user} alt="Logo para usuários" 
             />
           </div>
         </Logo>

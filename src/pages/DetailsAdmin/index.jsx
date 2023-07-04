@@ -16,6 +16,8 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
 
+import smaller from "../../../public/images/smaller.svg"
+
 export function DetailsAdmin(){
   const navigate = useNavigate()
   const params = useParams()
@@ -58,7 +60,7 @@ export function DetailsAdmin(){
 
         <Link to="/" >
           <button className="Voltar">
-            <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
+            <img className="Smaller" src={smaller} alt="icone de voltar página"/>
             voltar
           </button>
         </Link>

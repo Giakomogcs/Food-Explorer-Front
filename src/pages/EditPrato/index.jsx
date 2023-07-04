@@ -16,6 +16,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { useNavigate } from "react-router-dom"
+import smaller from "../../../public/images/smaller.svg"
 
 export function EditPrato(){
   
@@ -98,7 +99,7 @@ export function EditPrato(){
   
   useEffect(() => {
     async function searchPrato(){
-      const response = await api.get(`http://localhost:3333/pratos/${params.prato_id}`)
+      const response = await api.get(`/pratos/${params.prato_id}`)
       catchIngredients(response.data)
 
       localStorage.setItem("@food-explorer:Edit", JSON.stringify(response.data))
@@ -122,7 +123,7 @@ export function EditPrato(){
 
       <Content>
         <Link to={-1} className="Voltar">
-          <img className="Smaller" src="../../../public/images/smaller.svg" alt="icone de voltar página"/>
+          <img className="Smaller" src={smaller} alt="icone de voltar página"/>
           voltar
         </Link>
 
