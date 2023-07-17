@@ -1,5 +1,5 @@
 
-# Food Explorer API
+# Food Explorer Front
 
 A aplicação que desenvolveremos é um cardápio digital para um restaurante fictício, conhecido como foodExplorer.
 
